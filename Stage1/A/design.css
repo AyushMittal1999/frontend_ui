@@ -131,17 +131,22 @@ div[id $="day"] h2{
     position: fixed;
     height: 100%;
     width: 100%;
-    overflow: auto;
     background-color: rgba(0,0,0,0.5);
+    overflow: scroll;
 }
 
 #modal{
     width: 70%;
+    position: relative;
     background-color: white;
     margin: auto;
     padding: 10px;
     font-size: 25px;
     border-radius: 10px;
+    bottom: 20px;
+    /* overflow: scroll; */
+    /* height: 100px; */
+
     
 }
 
