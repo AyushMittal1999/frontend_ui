@@ -1,10 +1,45 @@
 
 #schedule{
-    width: fit-content;
+    width: 100%;
     margin: auto;
 }
 
 
+#today-schedule-ulcover-div{
+
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #faf2e3;
+    font-size: 25px;
+    border-radius: 10px;
+    border:1px dashed gray;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.inline-div{
+    display: inline;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.major-heading-hr{
+    height: 5px;
+    background-color: lightskyblue;
+    border-radius: 10px;
+}
+
+.major-heading{
+    font-size: 30px;
+    margin: 10px;
+    color: mediumblue;
+}
+
+li{
+    padding: 5px;
+}
 
 ul:empty:after {
     content: "Not updated yet";
@@ -12,6 +47,11 @@ ul:empty:after {
     font-style: italic;
     font-family: 'Courier New', Courier, monospace;
   }
+
+#weekdays-wrap-div{
+    width: fit-content;
+    margin: auto;
+}
 
 section{
     display: flex;
@@ -26,8 +66,8 @@ section{
 
 .card1{
     display: flex;
-    height: 250px;
-    width: 400px;
+    height: 200px;
+    width: 350px;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 10px;
@@ -50,7 +90,7 @@ img{
     flex: 5;
     width: 100%;
     height: 100%;
-    font-size: 25px;
+    font-size: 20px;
     padding: 5px;
     background-color: lightgoldenrodyellow;
 }
@@ -83,7 +123,7 @@ img{
 div[id $="day"] h2{
     margin: 30px;
     margin-bottom: 0px;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 #modal-cover{
