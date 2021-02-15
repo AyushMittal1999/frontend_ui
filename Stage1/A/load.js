@@ -90,8 +90,8 @@ function updateHTMLToday(){
     const todayDay = WEEKDAYS[ (new Date().getDay() -1 + 7 )%7 ] ;
     const newitems = JSON.parse( localStorage.getItem(DATA_KEY) )[ WEEKDAYS.indexOf(todayDay) ];
     today_breakfast.textContent = (newitems[ 0 ].length >0 )?newitems[ 0 ].join(", "):"nothing";
-    today_lunch.textContent = (newitems[ 1 ].length >0 )?newitems[ 0 ].join(", "):"nothing"; 
-    today_snacks.textContent = (newitems[ 2 ].length >0 )?newitems[ 0 ].join(", "):"nothing"; 
+    today_lunch.textContent = (newitems[ 1 ].length >0 )?newitems[ 1 ].join(", "):"nothing"; 
+    today_snacks.textContent = (newitems[ 2 ].length >0 )?newitems[ 2 ].join(", "):"nothing"; 
     today_dinner.textContent = (newitems[ 3 ].length >0 )?newitems[ 3 ].join(", "):"nothing"; 
 
 }
