@@ -20,6 +20,7 @@
     margin: auto;
     border-radius: 10px;
     border:1px dashed gray;
+    overflow-wrap: break-word;
 }
 
 #today-schedule-image-div{
@@ -133,6 +134,8 @@ img{
     font-size: 25px;
     padding: 5px;
     background-color: lightgoldenrodyellow;
+    overflow: scroll;
+    overflow-wrap: break-word;
 }
 
 
