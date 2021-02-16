@@ -27,6 +27,9 @@ const today_lunch = document.getElementById("today-schedule-lunch");
 const today_snacks = document.getElementById("today-schedule-snacks");
 const today_dinner = document.getElementById("today-schedule-dinner");
 
+// Get success status from HTML
+const success_div = document.getElementById("status-update-div");
+
 // ADD event Listenser to buttons
 // Listener to close modal
 modal_close_button.addEventListener("click" , hideModal );
@@ -129,6 +132,21 @@ function showModal(){
     document.getElementById("modal-cover").style.display = "block";
 }
 
+// Function to display success
+function displaySuccess(){
+
+    success_div.style.display = "block";
+
+    setTimeout( hideSuccess , 2000 ) ;
+}
+
+// Function to hide success
+function hideSuccess(){
+ 
+    success_div.style.display = "none";
+
+}
+
 // Function to Update Schedule from modal
 function updateSchedule(){
 
@@ -159,9 +177,14 @@ function updateSchedule(){
         updateHTML( [daySelect.value.toLowerCase()] );
         modalForm.reset(); 
 
-    }
+        hideModal();
+        displaySuccess();
 
-    hideModal();
+    }
+    else{
+        hideModal();
+
+    }
 
 }
 

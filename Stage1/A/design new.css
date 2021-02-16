@@ -252,4 +252,38 @@ input{
 }
 
 
-/* To Do : Button layout by div */
+
+#status-update-div{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+
+}
+
+#success-status-update-div{
+    background-color: #c7f2c7;
+    font-size: 25px;
+    padding: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex ;
+    flex-direction: row;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    border:1px dashed gray;
+
+}
+
+#success-status-update-div img{
+    width: 50px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+
+#success-status-update-div div{
+    width: fit-content;
+    margin: auto;
+}
