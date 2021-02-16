@@ -5,7 +5,8 @@
 }
 
 #today-schedule{
-    margin-top: 110px;
+    margin-top: 130px;
+    margin-bottom: 50px;
 }
 
 #today-schedule-flex-div{
@@ -138,7 +139,7 @@ img{
 
 
 .button{
-    font-size: 20px;
+    font-size: 25px;
     background-color: whitesmoke;
     border-radius: 20px;
     border-color: goldenrod;
