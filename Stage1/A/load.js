@@ -92,6 +92,7 @@ function updateHTMLToday(){
 
     const todayDay = WEEKDAYS[ (new Date().getDay() -1 + 7 )%7 ] ;
     const newitems = JSON.parse( localStorage.getItem(DATA_KEY) )[ WEEKDAYS.indexOf(todayDay) ];
+    
     today_breakfast.textContent = (newitems[ 0 ].length >0 )?newitems[ 0 ].join(", "):"nothing";
     today_lunch.textContent = (newitems[ 1 ].length >0 )?newitems[ 1 ].join(", "):"nothing"; 
     today_snacks.textContent = (newitems[ 2 ].length >0 )?newitems[ 2 ].join(", "):"nothing"; 
@@ -103,10 +104,12 @@ function updateHTMLToday(){
 function updateHTML( days = WEEKDAYS ){
 
     for( const day of days ){
+        
         const ulLiveList = document.getElementById( day +"-schedule").getElementsByClassName("food-item-list");
         const newitems = JSON.parse( localStorage.getItem(DATA_KEY) )[ WEEKDAYS.indexOf(day) ];
+        
         for( let ithMeal = ulLiveList.length-1  ; ithMeal>=0; ithMeal-- ){
-            // console.log(  ) ;
+
             ulLiveList[ithMeal].parentNode.replaceChild(  convertToULTag(newitems[ ithMeal ]  , ulLiveList[ithMeal] ) , ulLiveList[ithMeal] );
         }
 
@@ -174,9 +177,11 @@ function updateSchedule(){
 
         localStorage.setItem(DATA_KEY , JSON.stringify(curdata) );
 
+        
+        
         updateHTML( [daySelect.value.toLowerCase()] );
+        
         modalForm.reset(); 
-
         hideModal();
         displaySuccess();
 
