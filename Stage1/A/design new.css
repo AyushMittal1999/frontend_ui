@@ -38,7 +38,7 @@
     border-radius: 10px;
     border:1px dashed gray;
     padding: 10px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 
@@ -144,7 +144,7 @@ div[class $="image-div"]{
     font-size: 25px;
     padding: 5px;
     background-color: lightgoldenrodyellow;
-    overflow: scroll;
+    overflow: auto;
     overflow-wrap: break-word;
 }
 
@@ -199,7 +199,7 @@ div[id $="day"] h2{
     height: 100%;
     width: 100%;
     background-color: rgba(0,0,0,0.5);
-    overflow: scroll;
+    overflow: auto;
     top: 100px;
     z-index: 1;
 }
@@ -213,6 +213,7 @@ div[id $="day"] h2{
     border-radius: 10px;
     bottom: 20px;
     margin-top: 10px;
+    margin-bottom: 100px;
     /* overflow: scroll; */
     /* height: 100px; */
 
