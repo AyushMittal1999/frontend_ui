@@ -95,9 +95,7 @@ class View{
 
 
 
-
     //  Update UI
-
     // Update Today day Summary
     updateHTMLToday( data ){
 
