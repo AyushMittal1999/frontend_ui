@@ -1,0 +1,313 @@
+
+/* Today Schedule Part styles */
+
+#today-schedule{
+    margin-top: 130px;
+    margin-bottom: 50px;
+}
+
+#today-schedule-flex-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    max-width: 1500px;
+    height: 300px;
+    margin: auto;
+    border-radius: 10px;
+    border:1px dashed gray;
+    overflow-wrap: break-word;
+}
+
+#today-schedule-image-div{
+    flex: 2;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#today-schedule-ulcover-div{
+
+    width: 100%;
+    height: calc( 100% - 22px);
+    margin-left: 2%;
+    flex: 5;
+    background-color: #faf2e3;
+    font-size: 25px;
+    border-radius: 10px;
+    border:1px dashed gray;
+    padding: 10px;
+    overflow: auto;
+}
+
+
+
+
+
+
+/* Some Classes style  */
+
+.inline-div{
+    display: inline;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.major-heading-hr{
+    height: 5px;
+    background-color: lightskyblue;
+    border-radius: 10px;
+}
+
+.major-heading{
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px;
+    color: #c9461e;
+}
+
+li{
+    padding: 5px;
+}
+
+ul:empty:after {
+    content: "Not updated yet";
+
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.card1{
+    display: flex;
+    height: 200px;
+    width: 20%;
+    min-width: 300px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    border:1px dashed gray;
+    overflow: hidden;
+}
+
+
+
+
+
+
+/* Weekly Schedule STyles */
+
+#schedule-heading{
+    position: sticky;
+    top: 100px;
+    background-color: white;
+    padding-top: 10px;
+}
+
+
+#schedule-heading-inner{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#weekdays-wrap-div{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+section[class $="-schedule"]{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    margin: 10px;
+
+}
+
+div[class $="image-div"]{
+     flex: 4;
+}
+
+
+.textincard{
+    flex: 5;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    padding: 5px;
+    background-color: lightgoldenrodyellow;
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+
+.button{
+    font-size: 25px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    border-color: goldenrod;
+    padding: 10px;
+    float: right;
+    cursor: pointer;
+    text-align: justify;
+}
+
+
+#heading{
+    background-color: #ecd6ae;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+#heading  h1{
+    font-size: 40px;
+    margin-left: 30px;
+}
+
+#schedule-heading h2{
+    display: inline;
+    width: fit-content;
+}
+
+div[id $="day"] h2{
+    margin: 30px;
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+/* Update Modal Style */
+
+#modal-cover{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: auto;
+    top: 100px;
+    z-index: 1;
+}
+
+#modal{
+    width: 70%;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 10px;
+    bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    /* overflow: scroll; */
+    /* height: 100px; */
+
+    
+}
+
+label{
+    padding: 5px;
+    margin: 10px;
+}
+
+select{
+    font-size: 25px;
+    padding: 5px;
+    margin: 10px;
+    width: 30%;
+    border-radius: 10px;
+}
+
+input{
+    font-size: 25px;
+    padding: 5px;
+    margin: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+#modal-update-changes-button{
+    position: relative;
+    left: calc( 100% - 200px);
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    float: none;
+    font-weight: bolder;
+}
+
+#modal-close-button{
+    float: right;
+    font-size: 30px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+/* Temporarily this button is removed */
+#modal-add-button{
+    font-size: 25px;
+    border-color: blue;
+    border-radius: 2px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+}
+
+
+
+
+
+/* Status Successful Attributes */
+
+#status-update-div{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+
+}
+
+#success-status-update-div{
+    background-color: #c7f2c7;
+    font-size: 25px;
+    padding: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex ;
+    flex-direction: row;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    border:1px dashed gray;
+
+}
+
+#success-status-update-div img{
+    width: 50px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+
+#success-status-update-div div{
+    width: fit-content;
+    margin: auto;
+}
