@@ -34,6 +34,10 @@ class View{
         // Get success status from HTML
         this.success_div = document.getElementById("status-update-div");
 
+        this.modal_cover = document.getElementById("modal-cover") ;
+
+
+
         this.initCommonListeners();
     }
 
@@ -49,20 +53,20 @@ class View{
 
     // Function to close Modal
     hideModal(){
-        document.getElementById("modal-cover").style.display = "none";
+        this.modal_cover.style.display = "none";
     }
 
     // Function to Open Modal
      showModal(){
-        document.getElementById("modal-cover").style.display = "block";
+        this.modal_cover.style.display = "block";
     }
 
 
     initCommonListeners( ){
-        this.modal_close_button.addEventListener("click" , this.hideModal );
+        this.modal_close_button.addEventListener("click" , this.hideModal.bind(this) );
 
         //Listener to display Modal
-        this.edit_button.addEventListener("click" , this.showModal );
+        this.edit_button.addEventListener("click" , this.showModal.bind(this) );
     }
 
 
