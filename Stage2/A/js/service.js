@@ -3,7 +3,9 @@ class Service{
 
     #DATA_KEY ;
     #model;
-
+    #refreshMealUI;
+    #showUpdateSuccess;
+    #showUpdateFail;
 
     constructor( wdays , meals ) {
     
@@ -31,26 +33,26 @@ class Service{
 
     
     bindShowUpdateSuccess( callbackFn ){
-        this.showUpdateSuccess = callbackFn ; 
+        this.#showUpdateSuccess = callbackFn ; 
     }
 
     bindShowUpdateFail( callbackFn){
-        this.showUpdateFail = callbackFn ;
+        this.#showUpdateFail = callbackFn ;
     }
 
     bindRefreshMealUI( callbackFn ){
-        this.refreshMealUI = callbackFn ;
+        this.#refreshMealUI = callbackFn ;
     }
 
     updateMeal( day , meal , foodItems ){
 
         if( this.#model.updateMeal( day , meal , foodItems ) ){
 
-            this.showUpdateSuccess();
+            this.#showUpdateSuccess();
 
             localStorage.setItem( this.#DATA_KEY , JSON.stringify ( this.#model.getCompressedData() ) ) ;
 
-            this.refreshMealUI( this.getData() , [day] , [meal]  ) ;
+            this.#refreshMealUI( this.getData() , [day] , [meal]  ) ;
 
         }
         else{
