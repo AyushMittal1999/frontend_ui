@@ -1,8 +1,28 @@
 
 class View{
 
-    #WEEKDAYS
-    #MEALS
+    #WEEKDAYS;
+    #MEALS;
+    #daySelect;
+    #mealSelect;
+    #modal_close_button;
+    #modal_update_button;
+    #edit_button;
+    #foodTextbox;
+    #modalForm;
+    #today_breakfast;
+    #today_lunch;
+    #today_snacks;
+    #today_dinner;
+    #success_div;
+    #modal_cover;
+    
+    #updateScheduleCallback;
+
+
+    
+    
+
 
     constructor( WEEKDAYS , MEALS){
 
@@ -10,76 +30,76 @@ class View{
         this.#MEALS = MEALS ;
 
         // Set Modal Dropdown listener
-        this.daySelect = document.getElementById("days-select");
-        this.mealSelect = document.getElementById("meal-select");
+        this.#daySelect = document.getElementById("days-select");
+        this.#mealSelect = document.getElementById("meal-select");
 
         // Get Button from HTML
-        this.modal_close_button = document.getElementById("modal-close-button");
-        this.modal_update_button = document.getElementById("modal-update-changes-button");
-        this.edit_button = document.getElementById("edit-button");
+        this.#modal_close_button = document.getElementById("modal-close-button");
+        this.#modal_update_button = document.getElementById("modal-update-changes-button");
+        this.#edit_button = document.getElementById("edit-button");
 
         // Get Input food-item from HTML
-        this.foodTextbox = document.getElementById("food-input");
+        this.#foodTextbox = document.getElementById("food-input");
 
         // Get Modal rom HTML
-        this.modalForm = document.getElementById("modal-form");
+        this.#modalForm = document.getElementById("modal-form");
 
 
         // Get today schedule div from HTML
-        this.today_breakfast = document.getElementById("today-schedule-breakfast");
-        this.today_lunch = document.getElementById("today-schedule-lunch");
-        this.today_snacks = document.getElementById("today-schedule-snacks");
-        this.today_dinner = document.getElementById("today-schedule-dinner");
+        this.#today_breakfast = document.getElementById("today-schedule-breakfast");
+        this.#today_lunch = document.getElementById("today-schedule-lunch");
+        this.#today_snacks = document.getElementById("today-schedule-snacks");
+        this.#today_dinner = document.getElementById("today-schedule-dinner");
 
         // Get success status from HTML
-        this.success_div = document.getElementById("status-update-div");
+        this.#success_div = document.getElementById("status-update-div");
 
-        this.modal_cover = document.getElementById("modal-cover") ;
+        this.#modal_cover = document.getElementById("modal-cover") ;
 
 
 
-        this.initCommonListeners();
+        this.#initCommonListeners();
     }
 
 
     bindUpdateSchedule( callback ){
 
-        this.updateScheduleCallback = callback;
+        this.#updateScheduleCallback = callback;
 
         //Listener to update changes
-        this.modal_update_button.addEventListener("click" , this.updateSchedule.bind( this) );
+        this.#modal_update_button.addEventListener("click" , this.#updateSchedule.bind( this) );
 
     }
 
     // Function to close Modal
-    hideModal(){
-        this.modal_cover.style.display = "none";
+    #hideModal(){
+        this.#modal_cover.style.display = "none";
     }
 
     // Function to Open Modal
-     showModal(){
-        this.modal_cover.style.display = "block";
+    #showModal(){
+        this.#modal_cover.style.display = "block";
     }
 
 
-    initCommonListeners( ){
-        this.modal_close_button.addEventListener("click" , this.hideModal.bind(this) );
+    #initCommonListeners( ){
+        this.#modal_close_button.addEventListener("click" , this.#hideModal.bind(this) );
 
         //Listener to display Modal
-        this.edit_button.addEventListener("click" , this.showModal.bind(this) );
+        this.#edit_button.addEventListener("click" , this.#showModal.bind(this) );
     }
 
 
-    updateSchedule(){
+    #updateSchedule(){
         
-        if( this.foodTextbox.value !== null ){
+        if( this.#foodTextbox.value !== null ){
 
-            const newFoodItem =  this.foodTextbox.value.split(";").filter(x => x.trim().length>=1 ).map( function(x){ return x.trim().split(" ").filter(x => x.trim().length>=1 ).map(function(a){ return a[0].toUpperCase() + a.substring(1) ; } ).join(" ") ; } ) ;
-            this.updateScheduleCallback( this.daySelect.value.toLowerCase() , this.mealSelect.value.toLowerCase() , newFoodItem ) ;
+            const newFoodItem =  this.#foodTextbox.value.split(";").filter(x => x.trim().length>=1 ).map( function(x){ return x.trim().split(" ").filter(x => x.trim().length>=1 ).map(function(a){ return a[0].toUpperCase() + a.substring(1) ; } ).join(" ") ; } ) ;
+            this.#updateScheduleCallback( this.#daySelect.value.toLowerCase() , this.#mealSelect.value.toLowerCase() , newFoodItem ) ;
         }
 
-        this.modalForm.reset();
-        this.hideModal();
+        this.#modalForm.reset();
+        this.#hideModal();
 
     }
 
@@ -88,7 +108,7 @@ class View{
     // Function to display success
     displaySuccess(){
 
-        this.success_div.style.display = "block";
+        this.#success_div.style.display = "block";
 
         setTimeout( this.hideSuccess.bind( this) , 2000 ) ;
     }
@@ -96,7 +116,7 @@ class View{
     // Function to hide success
     hideSuccess(){
     
-        this.success_div.style.display = "none";
+        this.#success_div.style.display = "none";
 
     }
 
@@ -104,35 +124,35 @@ class View{
 
     //  Update UI
     // Update Today day Summary
-    updateHTMLToday( data ){
+    #updateHTMLToday( data ){
 
         const todayDay = WEEKDAYS[ (new Date().getDay() -1 + 7 )%7 ] ;
         const newitems = data;
         
-        this.today_breakfast.textContent = (newitems.breakfast.length >0 )?newitems.breakfast .join(", "):"nothing";
-        this.today_lunch.textContent = (newitems.lunch.length >0 )?newitems.lunch.join(", "):"nothing"; 
-        this.today_snacks.textContent = (newitems.snacks.length >0 )?newitems.snacks.join(", "):"nothing"; 
-        this.today_dinner.textContent = (newitems.dinner.length >0 )?newitems.dinner.join(", "):"nothing"; 
+        this.#today_breakfast.textContent = (newitems.breakfast.length >0 )?newitems.breakfast .join(", "):"nothing";
+        this.#today_lunch.textContent = (newitems.lunch.length >0 )?newitems.lunch.join(", "):"nothing"; 
+        this.#today_snacks.textContent = (newitems.snacks.length >0 )?newitems.snacks.join(", "):"nothing"; 
+        this.#today_dinner.textContent = (newitems.dinner.length >0 )?newitems.dinner.join(", "):"nothing"; 
 
     }
 
 
     // Copy Attributes from one node to other node
-    copyAttributes( dest, src  ){
+    #copyAttributes( dest, src  ){
         for( const att of src.attributes ){
             dest.setAttribute( att.name , att.value ) ;
         }
     }
 
     // Make a UL tag corresponding to list of food items for a given node to be replaced
-    convertToULTag(list , org_node){
+    #convertToULTag(list , org_node){
         const parentULTag = document.createElement("ul");
         for( const l of list){
             const liTag = document.createElement("li");
             liTag.appendChild( document.createTextNode( l ) );
             parentULTag.appendChild(liTag);
         }
-        this.copyAttributes( parentULTag , org_node );
+        this.#copyAttributes( parentULTag , org_node );
         return parentULTag;
     }
 
@@ -144,7 +164,7 @@ class View{
 
             for( const meal of meals ){
                 const ulLiveList = document.querySelector( "#" +day +"-schedule" + " ."+meal+"-meal-div ul" );          
-                ulLiveList.parentNode.replaceChild(  this.convertToULTag( data[day][meal]  , ulLiveList ) , ulLiveList );
+                ulLiveList.parentNode.replaceChild(  this.#convertToULTag( data[day][meal]  , ulLiveList ) , ulLiveList );
             }
 
         }
@@ -152,7 +172,7 @@ class View{
         const WEEKDAYS = ["monday" , "tuesday" , "wednesday" , "thursday" , "friday" , "saturday" , "sunday"] ;
         const todayDay = WEEKDAYS [ (new Date().getDay() -1 + 7 )%7 ] ;
         if( days.indexOf( todayDay) !== -1 ){
-            this.updateHTMLToday(data[todayDay] );
+            this.#updateHTMLToday(data[todayDay] );
         }
     }
 

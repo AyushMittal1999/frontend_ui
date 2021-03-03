@@ -1,7 +1,8 @@
 
 class Service{
 
-    #DATA_KEY 
+    #DATA_KEY ;
+    #model;
 
 
     constructor( wdays , meals ) {
@@ -20,12 +21,12 @@ class Service{
             localStorage.setItem( this.#DATA_KEY , JSON.stringify(defaultarr) );
         }
 
-        this.model = new Model( JSON.parse( localStorage.getItem( this.#DATA_KEY ) ), wdays, meals ) ;
+        this.#model = new Model( JSON.parse( localStorage.getItem( this.#DATA_KEY ) ), wdays, meals ) ;
 
     }    
 
     getData(){
-        return this.model.schedule; 
+        return this.#model.schedule; 
     }
 
     
@@ -43,11 +44,11 @@ class Service{
 
     updateMeal( day , meal , foodItems ){
 
-        if( this.model.updateMeal( day , meal , foodItems ) ){
+        if( this.#model.updateMeal( day , meal , foodItems ) ){
 
             this.showUpdateSuccess();
 
-            localStorage.setItem( this.#DATA_KEY , JSON.stringify ( this.model.getCompressedData() ) ) ;
+            localStorage.setItem( this.#DATA_KEY , JSON.stringify ( this.#model.getCompressedData() ) ) ;
 
             this.refreshMealUI( this.getData() , [day] , [meal]  ) ;
 
