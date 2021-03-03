@@ -7,7 +7,7 @@ class Controller{
         this.service = service;
         this.view = view;
 
-        console.log( view , service );
+        // console.log( view , service );
         
 
         this.service.bindShowUpdateSuccess( this.view.displaySuccess.bind( this.view ) );
