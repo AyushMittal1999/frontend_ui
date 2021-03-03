@@ -1,10 +1,13 @@
 
 class View{
 
+    #WEEKDAYS
+    #MEALS
+
     constructor( WEEKDAYS , MEALS){
 
-        this.WEEKDAYS  = WEEKDAYS;
-        this.MEALS = MEALS ;
+        this.#WEEKDAYS  = WEEKDAYS;
+        this.#MEALS = MEALS ;
 
         // Set Modal Dropdown listener
         this.daySelect = document.getElementById("days-select");
@@ -131,7 +134,7 @@ class View{
 
 
     // Update Cards on HTML for specified days
-    updateHTML( data , days = this.WEEKDAYS , meals =this.MEALS ){
+    updateHTML( data , days = this.#WEEKDAYS , meals =this.#MEALS ){
 
         for( const day of days ){
 

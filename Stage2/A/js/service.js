@@ -1,14 +1,15 @@
 
 class Service{
 
-    DATA_KEY = "dietData";
+    #DATA_KEY 
+
 
     constructor( wdays , meals ) {
+    
+        this.#DATA_KEY= "dietData";
 
-       this.WEEKDAYS = wdays;
-       this.MEALS = meals;
-
-        if( localStorage.getItem( this.DATA_KEY) === null){
+    
+        if( localStorage.getItem( this.#DATA_KEY) === null){
             
             let defaultarr = [   ] ;
             
@@ -16,10 +17,10 @@ class Service{
                 defaultarr.push( [ [], [] , [] , [] ] );
             }
     
-            localStorage.setItem( this.DATA_KEY , JSON.stringify(defaultarr) );
+            localStorage.setItem( this.#DATA_KEY , JSON.stringify(defaultarr) );
         }
 
-        this.model = new Model( JSON.parse( localStorage.getItem( this.DATA_KEY ) ), this.WEEKDAYS, this.MEALS ) ;
+        this.model = new Model( JSON.parse( localStorage.getItem( this.#DATA_KEY ) ), wdays, meals ) ;
 
     }    
 
@@ -46,7 +47,7 @@ class Service{
 
             this.showUpdateSuccess();
 
-            localStorage.setItem( this.DATA_KEY , JSON.stringify ( this.model.getCompressedData() ) ) ;
+            localStorage.setItem( this.#DATA_KEY , JSON.stringify ( this.model.getCompressedData() ) ) ;
 
             this.refreshMealUI( this.getData() , [day] , [meal]  ) ;
 
