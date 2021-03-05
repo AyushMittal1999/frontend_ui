@@ -2,42 +2,36 @@
 @class Model
 */
 
-class Model{
+function Model( schedule_data , weekdays, meals  ){
 
-    #WEEKDAYS
-    #MEALS
-    #compressedData
-    
-    constructor( schedule_data , weekdays, meals  ){
+    const WEEKDAYS = weekdays;
+    const MEALS = meals;
 
-        this.#WEEKDAYS = weekdays;
-        this.#MEALS = meals;
+    let data = {};
 
-        let data = {};
-
-        for( let i =0 ; i < this.#WEEKDAYS.length ; i++ ){
-            data[this.#WEEKDAYS[i] ] = {}
-            for( let j = 0; j < this.#MEALS.length ; j++){
-                data[ this.#WEEKDAYS[i] ][ this.#MEALS[j] ] = schedule_data[ i ][j] ;
-            }
+    for( let i =0 ; i <  WEEKDAYS.length ; i++ ){
+        data[ WEEKDAYS[i] ] = {}
+        for( let j = 0; j <  MEALS.length ; j++){
+            data[  WEEKDAYS[i] ][  MEALS[j] ] = schedule_data[ i ][j] ;
         }
-
-        let compressedData =[];
-
-        for( let i =0 ; i < this.#WEEKDAYS.length ; i++ ){
-            compressedData.push( []);
-            for( let j = 0; j < this.#MEALS.length ; j++){
-                compressedData[i].push (data[ this.#WEEKDAYS[i] ][ this.#MEALS[j] ] );
-            }
-        }
-
-
-        this.schedule = data;
-        this.#compressedData = compressedData ; 
-
     }
 
-    addFoodItems( day , meal, items ){
+    let compressedData =[];
+
+    for( let i =0 ; i <  WEEKDAYS.length ; i++ ){
+        compressedData.push( []);
+        for( let j = 0; j <  MEALS.length ; j++){
+            compressedData[i].push (data[  WEEKDAYS[i] ][  MEALS[j] ] );
+        }
+    }
+
+
+    this.schedule = data;
+     compressedData = compressedData ; 
+
+    
+
+    this.addFoodItems = function( day , meal, items ){
 
         if( day && meal && items && Array.isArray( items ) ){
 
@@ -45,7 +39,7 @@ class Model{
 
             if( (day in this.schedule) && (meal in this.schedule[day] )  ){
                 this.schedule[day][meal].push( ...items );
-                this.#compressedData[ this.#WEEKDAYS.indexOf( day) ][ this.#MEALS.indexOf(meal) ].push( ...items ) ;
+                 compressedData[  WEEKDAYS.indexOf( day) ][  MEALS.indexOf(meal) ].push( ...items ) ;
                 return  1;
             }
 
@@ -54,7 +48,7 @@ class Model{
     }
 
 
-    updateMeal( day , meal, items ){
+    this.updateMeal = function( day , meal, items ){
 
         if( day && meal && items ){
 
@@ -62,7 +56,7 @@ class Model{
 
             if( (day in this.schedule) && (meal in this.schedule[day] )  ){
                 this.schedule[day][meal] = items ;
-                this.#compressedData[ this.#WEEKDAYS.indexOf( day) ][ this.#MEALS.indexOf(meal) ] = items  ;
+                 compressedData[  WEEKDAYS.indexOf( day) ][  MEALS.indexOf(meal) ] = items  ;
                 return  1;
             }
 
@@ -70,9 +64,9 @@ class Model{
         return 0 ;
     }
 
-    getCompressedData(){
+    this.getCompressedData = function(){
 
-        return this.#compressedData ; 
+        return  compressedData ; 
 
     }
 
