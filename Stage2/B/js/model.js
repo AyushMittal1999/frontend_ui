@@ -27,7 +27,7 @@ function Model( schedule_data , weekdays, meals  ){
 
 
     this.schedule = data;
-     compressedData = compressedData ; 
+    compressedData = compressedData ; 
 
     
 
@@ -55,6 +55,16 @@ function Model( schedule_data , weekdays, meals  ){
             items.filter( item => (item && (item!="" )) )
 
             if( (day in this.schedule) && (meal in this.schedule[day] )  ){
+
+                // Avoid Duplicates
+                let taken = new Map();
+                for( const ele of items){
+                    if(  ele !="" && ! taken.has(ele.toLowerCase()  ) ){
+                        taken.set( ele.toLowerCase() , ele );
+                    }
+                }
+                items = Array.from( taken.values() );
+                
                 this.schedule[day][meal] = items ;
                  compressedData[  WEEKDAYS.indexOf( day) ][  MEALS.indexOf(meal) ] = items  ;
                 return  1;
