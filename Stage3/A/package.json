@@ -1,0 +1,30 @@
+{
+  "name": "A",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://ayushmittal1999.github.io/frontend_ui/Stage3/A",
+  "scripts": {
+    "build": "rm -rf build/ && npm run prebuildbabel && npm run prebuildcopy && cp src/*{.html,.css} build/src && npm run prodreactfiles",
+    "prodreactfiles": "cp node_modules/react/umd/react.production.min.js build/src/react.js && cp node_modules/react-dom/umd/react-dom.production.min.js build/src/react-dom.js",
+    "prebuildbabel": "npx babel src/ -s \"*.js\" --out-dir build/src  --presets react-app/prod",
+    "prebuildcopy": "mkdir -p build/resources/ && cp -a resources/. build/resources/",
+    "dev": "rm -rf dist/  && npm run predevcopy && npm run devreactfiles && cp src/*{.html,.css} dist/src && npm run predevbabel",
+    "predevbabel": "npx babel --watch src/ -s \"*.js\"  --out-dir dist/src  --presets react-app/prod",
+    "predevcopy": "mkdir -p dist/resources/ && cp -a resources/. dist/resources/",
+    "devreactfiles": "mkdir -p dist/src && cp node_modules/react/umd/react.development.js dist/src/react.js && cp node_modules/react-dom/umd/react-dom.development.js dist/src/react-dom.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
+    "gh-pages": "^3.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
