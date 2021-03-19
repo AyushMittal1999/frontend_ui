@@ -351,13 +351,16 @@ img{
     display: inline;
 }
 
+.btn--right{
+    float: right;
+
+}
 
 .btn{
     background-color: whitesmoke;
     border-radius: 20px;
     border-color: goldenrod;
     padding: 5px;
-    float: right;
     cursor: pointer;
     text-align: justify;
     font-size: 15px;

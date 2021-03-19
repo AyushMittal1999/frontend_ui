@@ -324,6 +324,10 @@ img{
     display: inline;
 }
 
+.btn--right{
+    float: right;
+
+}
 
 .btn{
     font-size: 25px;
@@ -331,7 +335,6 @@ img{
     border-radius: 20px;
     border-color: goldenrod;
     padding: 10px;
-    float: right;
     cursor: pointer;
     text-align: justify;
 }
