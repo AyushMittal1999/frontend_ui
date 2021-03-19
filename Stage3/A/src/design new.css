@@ -338,13 +338,27 @@ img{
 }
 
 
+.btn--right{
+    float: right;
+}
+
+
 .btn{
     font-size: 25px;
     background-color: whitesmoke;
     border-radius: 20px;
     border-color: goldenrod;
     padding: 10px;
-    float: right;
+    cursor: pointer;
+    text-align: justify;
+}
+
+
+.btn--simple{
+    font-size: 25px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 10px;
     cursor: pointer;
     text-align: justify;
 }

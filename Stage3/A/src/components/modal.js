@@ -49,11 +49,17 @@ const Modal = React.memo( function Modal( {visiblity , displayModalHandler ,upda
         if( updateData( day,meal, 
             foodItems.split(";").filter(x => x.trim().length>=1 ).map( function(x){ return x.trim().split(" ").filter(x => x.trim().length>=1 ).map(function(a){ return a[0].toUpperCase() + a.substring(1) ; } ).join(" ") ; } ) )){            
                 // Reset the form fields
-                setDay("monday");
-                setMeal("breakfast");
-                setFoodItems("")    
+                resetForm();
         }
         // else dont reset the form 
+    }
+
+    function resetForm(){
+        // Reset the form fields
+        setDay("monday");
+        setMeal("breakfast");
+        setFoodItems("");
+        setParsedFoodItems([]);
     }
 
     console.log("rneder modal");
@@ -61,11 +67,14 @@ const Modal = React.memo( function Modal( {visiblity , displayModalHandler ,upda
     return (
         <div  className="modal-cover" style={ {display:(visiblity?"block":"none") }} >
             <div className="modal">
-                <button className="btn" onClick ={handleModalClose} >X</button>
+                <button className="btn--right btn" onClick ={handleModalClose} >X</button>
+                <button className="btn--simple" onClick={resetForm}>clear</button>
+                
                 <Heading type="3" value="Edit Schedule" className="main-heading" ></Heading>   
                 
                 {/* Form for user input */}
                 <form onSubmit={ (event) =>     event.preventDefault() }>
+                
                     <label htmlFor="days-select">Day: </label>
                       <select name = "days" id = "days-select" value={day} onChange={(e) => setDay(e.target.value)} onBlur={(e) => setDay(e.target.value)}>
                         {weekdays.map( (d) => <option value={d} key={d} >{d[0].toUpperCase() + d.substring(1) }</option> )}
@@ -77,8 +86,11 @@ const Modal = React.memo( function Modal( {visiblity , displayModalHandler ,upda
                         {meals.map( (d) => <option value={d} key={d}>{d[0].toUpperCase() + d.substring(1) }</option> )}  
                         </select>
                     <br></br>
+
                     <label htmlFor="food-input">Food Items (separated by ;) : </label>
-                    <input name="food" id="food-input" type="text" value={foodItems} onChange={onChangeHandler}></input>
+                    <br/>
+                    
+                    <input name="food" id="food-input" type="text" value={foodItems} onChange={onChangeHandler} onBlur={onChangeHandler}></input>
                     
                     {/* Parsed enteried items in modal view */}
                     { parsedFoodItems.length>0?
