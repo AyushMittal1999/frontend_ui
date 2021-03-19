@@ -3,35 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Plan</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Diet Plan</title>        
+    <link rel="icon" 
+    type="image/png" 
+    href="../resources/images/icon/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" media=" all and (min-width: 601px)" href="design new.css">
+    <link rel="stylesheet"  media="all and (max-width: 600px)" href="mobile.css" /> -->
 </head>
+
 <body>
-    <div id="root"></div>
-    <!-- <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script> -->
+    <div id="root">
+        <img style="margin: auto;display: block;" width = 64px height = 64px src="../resources/images/loader.gif"/>
+    </div>
+
     <script src="react.js" ></script>
     <script src="react-dom.js" ></script>
 
-    <!-- <script type="module">
-        // import React from "./react.production.min.js";
-        import render from "./scripts/react-dom.development.js";
-
-        // console.log(render);
-    </script> -->
-    <!-- <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> -->
-    <!-- <script src="https://unpkg.com/@javascript/standalone@7.8.3/javascript.js"></script> -->
-    
-    <script type="text/javascript" src="card.js"> </script>
-    <script type="text/javascript" src="heading.js" ></script>
-    <script type="text/javascript" src="modal.js"> </script>
-    <script type="text/javascript" src="today.js"></script>
-    <script type="text/javascript" src="weekScheduleHeading.js"> </script>
-    <script type="text/javascript" src="weekday.js"> </script>
-    <script type="text/javascript" src="model.js"></script>
     <script src="objectmodel/service.js"></script>
+    <script src="objectmodel/model.js"></script>  
+    <script type="text/javascript" src="base components/card.js"> </script>
+    <script type="text/javascript" src="base components/heading.js" ></script>
+    <script type="text/javascript" src="base components/weekScheduleHeading.js"> </script>
+    <script type="text/javascript" src="base components/status.js"></script>
+    <script type="text/javascript" src="components/modal.js"> </script>
+    <script type="text/javascript" src="components/today.js"></script>
+    <script type="text/javascript" src="components/weekday.js"> </script>
     <script type="text/javascript" src="app.js"> </script>
-    <script type="text/javascript" src="index.js" >    </script>
+    <script type="text/javascript" src="index.js" ></script>
+
+    <link rel="stylesheet" media=" all and (min-width: 601px)" href="design new.css">
+    <link rel="stylesheet"  media="all and (max-width: 600px)" href="mobile.css" />
     
 </body>
 </html>

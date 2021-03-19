@@ -5,7 +5,7 @@ function Service( wdays , meals ) {
 
     if( localStorage.getItem( DATA_KEY) === null){            
         let defaultarr = [   ] ;
-        for( const i in WEEKDAYS ){
+        for( const i in wdays ){
             defaultarr.push( [ [], [] , [] , [] ] );
         }
         localStorage.setItem( DATA_KEY , JSON.stringify(defaultarr) );

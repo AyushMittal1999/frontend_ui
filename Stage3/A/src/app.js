@@ -1,40 +1,66 @@
-
 function App( {dataService}){
 
     let weekdays = ["monday" , "tuesday" , "wednesday" , "thursday" ,"friday" , "saturday" ,"sunday"];
     
     const [isModalVisible, setIsModalVisible] = React.useState( ()=> false );
-    const displayModalHandler = function(value){
-        setIsModalVisible(value);
+    
+    const displayModalHandler = function(setCondition){
+        setIsModalVisible(setCondition);
     }
 
-    
-    const [ specificUpdate , setSpecificUpdate ] = React.useState("no");
-    
-    const updateData=function( day,meal,foodItems){
+    const [statusVisiblity , setStatusVisiblity ] = React.useState(-1);
+
+    const [ updateRequest , setUpdateRequest ] = React.useState(()=> { return {specificDayUpdate:"no" ,requestID:0 } } );
+
+    const updateData = function( day,meal,foodItems){
         
         if( dataService.updateMeal(day,meal,foodItems) ){
+            // Hide Modal
             displayModalHandler(false);
-            setSpecificUpdate(day);
+            // Update the data
+            setUpdateRequest( (prevProp ) => { return {requestID: 1- prevProp.requestID , specificDayUpdate:day } } );
+            // Show sucess status
+            setStatusVisiblity( 1);
+            // Hide status after 2 sec
+            setTimeout( setStatusVisiblity , 2000, -1 );
+            // Return 1 to modal to clear modal fields
             return 1;
         }
         else{
             // UNSUCESS - UPDATE
-            console.log( "error happened");
+            console.log( "error occureed");
+
+            // Show sucess status
+            setStatusVisiblity( 0);
+            // Hide status after 2 sec
+            setTimeout( setStatusVisiblity , 2000, -1 );
+
+            // Not changing Modal state on unsuccessful updae to let user make edit in modal
+            // Return 0 to not clear fields
             return 0;
         }
-
     }
+
+
     const todayDay = weekdays[ (new Date().getDay() -1 + 7 )%7 ] ;
-    console.log( );
+    console.log( "render app");
+
     return(
      <React.Fragment>
-     <Heading type="1"className="main-heading" value="Diet Plan"  />
-     <Modal visiblity={isModalVisible} displayModalHandler ={displayModalHandler} updateData={updateData} />
-     <Today day ={todayDay} dataService={dataService} specificUpdate={specificUpdate} />
-     <WeekScheduleHeading displayModalHandler= {displayModalHandler}  />
-    {  weekdays.slice(weekdays.indexOf(todayDay),7).concat(weekdays.slice( 0 ,weekdays.indexOf(todayDay) ) )
-    .map( w  => <Weekday day={w} key={ w} dataService={dataService} specificUpdate={specificUpdate}  /> )}
+     
+        <Heading type="1" id="main-heading" value="Diet Plan"  />
+        
+        <Modal visiblity={isModalVisible} displayModalHandler ={displayModalHandler} updateData={updateData} />
+        
+        <Today day ={todayDay} dataService={dataService} {...updateRequest}/>
+        
+        {/* // Different component for schedule heading to compensate button in heading  */}
+        <WeekScheduleHeading displayModalHandler= {displayModalHandler}   />
+
+        { weekdays.slice(weekdays.indexOf(todayDay),7).concat(weekdays.slice( 0 ,weekdays.indexOf(todayDay) ) )
+        .map( w  =>{ return <Weekday day={w} key={ w} dataService={dataService} {...updateRequest}  /> } )}
+
+        <Status isSuccess = {statusVisiblity}/>
      </React.Fragment>
     )
 

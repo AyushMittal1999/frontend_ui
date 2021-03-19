@@ -1,5 +1,5 @@
 {
-  "name": "A",
+  "name": "stage3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,10 +7,10 @@
   "scripts": {
     "build": "rm -rf build/ && npm run prebuildbabel && npm run prebuildcopy && cp src/*{.html,.css} build/src && npm run prodreactfiles",
     "prodreactfiles": "cp node_modules/react/umd/react.production.min.js build/src/react.js && cp node_modules/react-dom/umd/react-dom.production.min.js build/src/react-dom.js",
-    "prebuildbabel": "npx babel src/ -s \"*.js\" --out-dir build/src  --presets react-app/prod",
+    "prebuildbabel": "npx babel src --out-dir build/src  --presets react-app/prod",
     "prebuildcopy": "mkdir -p build/resources/ && cp -a resources/. build/resources/",
     "dev": "rm -rf dist/  && npm run predevcopy && npm run devreactfiles && cp src/*{.html,.css} dist/src && npm run predevbabel",
-    "predevbabel": "npx babel --watch src/ -s \"*.js\"  --out-dir dist/src  --presets react-app/prod",
+    "predevbabel": "npx babel --watch src  --out-dir dist/src  --presets react-app/dev",
     "predevcopy": "mkdir -p dist/resources/ && cp -a resources/. dist/resources/",
     "devreactfiles": "mkdir -p dist/src && cp node_modules/react/umd/react.development.js dist/src/react.js && cp node_modules/react-dom/umd/react-dom.development.js dist/src/react-dom.js",
     "test": "echo \"Error: no test specified\" && exit 1",
