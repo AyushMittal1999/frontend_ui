@@ -2,7 +2,6 @@ var Status = React.memo(function Status(_ref) {
     var isSuccess = _ref.isSuccess;
 
 
-    console.log("render status");
     return (
         //Parent is visible if isSuccess != -1
         React.createElement(

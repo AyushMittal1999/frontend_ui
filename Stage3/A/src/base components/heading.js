@@ -6,7 +6,6 @@ var Heading = React.memo(function Heading(_ref) {
         child = _ref.child,
         rest = _objectWithoutProperties(_ref, ["type", "value", "child"]);
 
-    console.log("re rendering heading");
     return React.createElement(
         "div",
         rest,

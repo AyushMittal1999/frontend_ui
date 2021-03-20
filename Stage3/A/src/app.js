@@ -62,7 +62,6 @@ function App(_ref) {
     };
 
     var todayDay = weekdays[(new Date().getDay() - 1 + 7) % 7];
-    console.log("render app");
 
     return React.createElement(
         React.Fragment,

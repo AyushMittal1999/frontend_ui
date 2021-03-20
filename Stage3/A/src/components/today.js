@@ -9,7 +9,6 @@ var Today = React.memo(function Today(_ref) {
     var data = meals.map(function (m) {
         return ["Have", dataService.getMealData(day, m).join(", "), "in " + (m[0].toUpperCase() + m.substring(1))];
     });
-    console.log("render today");
     return React.createElement(
         "div",
         { id: "today-schedule" },

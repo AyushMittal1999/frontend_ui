@@ -8,7 +8,6 @@ var WeekScheduleHeading = React.memo(function WeekScheduleHeading(_ref) {
         displayModalHandler(true);
     };
 
-    console.log("render weeksch heading");
     return React.createElement(
         "div",
         Object.assign({ id: "schedule-heading" }, rest),

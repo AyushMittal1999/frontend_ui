@@ -6,7 +6,6 @@ var Weekday = React.memo(function Weekday(_ref) {
 
     var meals = ["breakfast", "lunch", "snacks", "dinner"];
 
-    console.log("render ", day);
     return React.createElement(
         "div",
         { id: day },
