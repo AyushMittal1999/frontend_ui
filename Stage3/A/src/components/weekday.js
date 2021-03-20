@@ -4,7 +4,7 @@ var Weekday = React.memo(function Weekday(_ref) {
         specificMealUpdate = _ref.specificMealUpdate;
 
 
-    var meals = ["breakfast", "lunch", "snacks", "dinner"];
+    var meals = dataService.MEALS;
 
     return React.createElement(
         "div",

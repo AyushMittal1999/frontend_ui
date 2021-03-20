@@ -3,7 +3,7 @@ var Today = React.memo(function Today(_ref) {
         dataService = _ref.dataService;
 
 
-    var meals = ["breakfast", "lunch", "snacks", "dinner"];
+    var meals = dataService.MEALS;
 
     // Updating data to add Have ..... in meal ( breakfast ... .) 
     var data = meals.map(function (m) {

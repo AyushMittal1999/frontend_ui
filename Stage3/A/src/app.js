@@ -4,7 +4,7 @@ function App(_ref) {
     var dataService = _ref.dataService;
 
 
-    var weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+    var weekdays = dataService.WEEKDAYS;
 
     var _React$useState = React.useState(function () {
         return false;
@@ -67,7 +67,7 @@ function App(_ref) {
         React.Fragment,
         null,
         React.createElement(Heading, { type: "1", id: "main-heading", value: "Diet Plan" }),
-        React.createElement(Modal, { visiblity: isModalVisible, displayModalHandler: displayModalHandler, updateData: updateData }),
+        React.createElement(Modal, { meals: dataService.MEALS, weekdays: dataService.WEEKDAYS, visiblity: isModalVisible, displayModalHandler: displayModalHandler, updateData: updateData }),
         React.createElement(Today, Object.assign({ day: todayDay, dataService: dataService }, updateRequest)),
         React.createElement(WeekScheduleHeading, { displayModalHandler: displayModalHandler }),
         weekdays.slice(weekdays.indexOf(todayDay), 7).concat(weekdays.slice(0, weekdays.indexOf(todayDay))).map(function (w) {

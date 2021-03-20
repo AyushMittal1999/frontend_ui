@@ -7,14 +7,11 @@ var Modal = React.memo(function Modal(_ref) {
 
     var visiblity = _ref.visiblity,
         displayModalHandler = _ref.displayModalHandler,
-        updateData = _ref.updateData;
-
-
-    var meals = ["breakfast", "lunch", "snacks", "dinner"];
-    var weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+        updateData = _ref.updateData,
+        meals = _ref.meals,
+        weekdays = _ref.weekdays;
 
     // Day Selected by user
-
     var _React$useState = React.useState("monday"),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         day = _React$useState2[0],
