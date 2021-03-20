@@ -15,7 +15,7 @@
     "devreactfiles": "mkdir -p dist/src && cp node_modules/react/umd/react.development.js dist/src/react.js && cp node_modules/react-dom/umd/react-dom.development.js dist/src/react-dom.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --dest Stage3/A --remote origin"
+    "deploy": "gh-pages -d build -b deploy --dest Stage3/A --remote origin"
   },
   "keywords": [],
   "author": "",
