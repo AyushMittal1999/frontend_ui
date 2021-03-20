@@ -1,6 +1,5 @@
 const Status = React.memo( function Status( {isSuccess} ){
 
-    console.log("render status");
     return (
         //Parent is visible if isSuccess != -1
         <div id ="status" className="status" style={{display:(isSuccess==-1?"none":"block")}}>

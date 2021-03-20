@@ -62,7 +62,6 @@ const Modal = React.memo( function Modal( {visiblity , displayModalHandler ,upda
         setParsedFoodItems([]);
     }
 
-    console.log("rneder modal");
 
     return (
         <div  className="modal-cover" style={ {display:(visiblity?"block":"none") }} >

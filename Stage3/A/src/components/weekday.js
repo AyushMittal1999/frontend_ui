@@ -3,7 +3,6 @@ const Weekday = React.memo( function Weekday({day , dataService , specificMealUp
 
     const meals = ["breakfast","lunch","snacks" ,"dinner"];
 
-    console.log("render " ,day);
     return(
 
     <div id={day}>

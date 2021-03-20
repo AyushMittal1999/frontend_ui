@@ -1,6 +1,5 @@
 const Card = React.memo( function Card( { classes:[parentClass ="",imgClass = "", textClass=""] , img , ul , data=[] } ){
 
-    console.log("card rerender") ;
     return(
         // Card layout, div main parent
         <div {... (parentClass!=""? {"className": parentClass}:{} ) } >

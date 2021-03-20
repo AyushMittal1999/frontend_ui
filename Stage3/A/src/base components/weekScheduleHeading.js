@@ -5,7 +5,6 @@ const  WeekScheduleHeading= React.memo( function WeekScheduleHeading( {displayMo
         displayModalHandler(true);
     }
 
-    console.log("render weeksch heading");
     return(
 
         <div id="schedule-heading" {...rest}>

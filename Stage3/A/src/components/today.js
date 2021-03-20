@@ -4,7 +4,6 @@ const Today = React.memo( function Today( {day , dataService }){
 
     // Updating data to add Have ..... in meal ( breakfast ... .) 
     const data= meals.map( (m) => ["Have" , dataService.getMealData( day , m ).join(", ") ,`in ${m[0].toUpperCase() + m.substring(1)}`] );
-    console.log("render today");
     return(
         <div id="today-schedule">
 
