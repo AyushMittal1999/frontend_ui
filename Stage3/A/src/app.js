@@ -10,15 +10,15 @@ function App( {dataService}){
 
     const [statusVisiblity , setStatusVisiblity ] = React.useState(-1);
 
-    const [ updateRequest , setUpdateRequest ] = React.useState(()=> { return {specificDayUpdate:"no" ,requestID:0 } } );
-
+    const [ updateRequest , setUpdateRequest ] = React.useState(()=> { return {specificDayUpdate:"no" , specificMealUpdate:"no",requestID:0 } } );
+                                                                                // initialaizse  specificDayUpdate, specificDayUpdate with any random string to make unequal to any meal or day
     const updateData = function( day,meal,foodItems){
         
         if( dataService.updateMeal(day,meal,foodItems) ){
             // Hide Modal
             displayModalHandler(false);
             // Update the data
-            setUpdateRequest( (prevProp ) => { return {requestID: 1- prevProp.requestID , specificDayUpdate:day } } );
+            setUpdateRequest( (prevProp ) => { return {requestID: 1- prevProp.requestID , specificDayUpdate:day , specificMealUpdate:meal } } );
             // Show sucess status
             setStatusVisiblity( 1);
             // Hide status after 2 sec

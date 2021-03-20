@@ -1,4 +1,4 @@
-const Weekday = React.memo( function Weekday({day , dataService}){
+const Weekday = React.memo( function Weekday({day , dataService , specificMealUpdate }){
 
 
     const meals = ["breakfast","lunch","snacks" ,"dinner"];
@@ -20,7 +20,8 @@ const Weekday = React.memo( function Weekday({day , dataService}){
             
                 {/* Creating a card layout corresponding to each meal */}
                 {meals.slice(0,2).map( (m)=>{
-                return <Card key={m} classes ={[`card ${m}` , `card__image-holder` , "card__text-holder"]}  img={{ src:`../resources/images/${m}.jpg`, alt:m} } data={ dataService.getMealData(day, m) }   />
+                return <Card key={m}  classes ={[`card ${m}` , `card__image-holder` , "card__text-holder"]}  img={{ src:`../resources/images/${m}.jpg`, alt:m} } data={ dataService.getMealData(day, m) } 
+                        rerender={ ( specificMealUpdate && specificMealUpdate!=m)?0:1}  /> // Skip card rerendering if some other meal is updated
                 })}
 
             </div>
@@ -29,7 +30,8 @@ const Weekday = React.memo( function Weekday({day , dataService}){
             <div className="day-schedule__two-card-group">
                 {/* Creating a card layout corresponding to each meal */}
                 {meals.slice(2,4).map( (m)=>{
-                return <Card key={m} classes ={[`card ${m}` , `card__image-holder` , "card__text-holder"]}  img={{ src:`../resources/images/${m}.jpg` , alt:m } } data={ dataService.getMealData(day, m) }   />
+                return <Card key={m} classes ={[`card ${m}` , `card__image-holder` , "card__text-holder"]}  img={{ src:`../resources/images/${m}.jpg` , alt:m } } data={ dataService.getMealData(day, m) } 
+                rerender={ ( specificMealUpdate && specificMealUpdate!=m)?0:1}   /> // Skip card rerendering if some other meal is updated
                 })}
             </div>
         

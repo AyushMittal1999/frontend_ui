@@ -1,5 +1,6 @@
-function Card( { classes:[parentClass ="",imgClass = "", textClass=""] , img , ul , data=[] } ){
+const Card = React.memo( function Card( { classes:[parentClass ="",imgClass = "", textClass=""] , img , ul , data=[] } ){
 
+    console.log("card rerender") ;
     return(
         // Card layout, div main parent
         <div {... (parentClass!=""? {"className": parentClass}:{} ) } >
@@ -34,4 +35,5 @@ function Card( { classes:[parentClass ="",imgClass = "", textClass=""] , img , u
 
         </div>
     )
-}
+} , function isEqual( prevProp , curProp){ if( "rerender" in curProp ) return !curProp["rerender"];  return false; } );
+// Skip rerendering if rerender attribute exist with rerender =0 else always rerender

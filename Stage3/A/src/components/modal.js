@@ -88,9 +88,9 @@ const Modal = React.memo( function Modal( {visiblity , displayModalHandler ,upda
                     <br></br>
 
                     <label htmlFor="food-input">Food Items (separated by ;) : </label>
-                    <br/>
                     
                     <input name="food" id="food-input" type="text" value={foodItems} onChange={onChangeHandler} onBlur={onChangeHandler}></input>
+                    <br/>
                     
                     {/* Parsed enteried items in modal view */}
                     { parsedFoodItems.length>0?
