@@ -3,6 +3,9 @@ function Service( wdays , meals ) {
 
     const DATA_KEY= "dietData";
 
+    this.WEEKDAYS = wdays;
+    this.MEALS = meals;
+
     if( localStorage.getItem( DATA_KEY) === null){            
         let defaultarr = [   ] ;
         for( const i in wdays ){

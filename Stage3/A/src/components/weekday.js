@@ -1,7 +1,7 @@
 const Weekday = React.memo( function Weekday({day , dataService , specificMealUpdate }){
 
 
-    const meals = ["breakfast","lunch","snacks" ,"dinner"];
+    const meals = dataService.MEALS;
 
     return(
 

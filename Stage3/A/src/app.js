@@ -1,6 +1,6 @@
 function App( {dataService}){
 
-    let weekdays = ["monday" , "tuesday" , "wednesday" , "thursday" ,"friday" , "saturday" ,"sunday"];
+    let weekdays = dataService.WEEKDAYS;
     
     const [isModalVisible, setIsModalVisible] = React.useState( ()=> false );
     
@@ -49,7 +49,7 @@ function App( {dataService}){
      
         <Heading type="1" id="main-heading" value="Diet Plan"  />
         
-        <Modal visiblity={isModalVisible} displayModalHandler ={displayModalHandler} updateData={updateData} />
+        <Modal meals = {dataService.MEALS} weekdays ={dataService.WEEKDAYS} visiblity={isModalVisible} displayModalHandler ={displayModalHandler} updateData={updateData} />
         
         <Today day ={todayDay} dataService={dataService} {...updateRequest}/>
         

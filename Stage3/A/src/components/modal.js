@@ -1,7 +1,5 @@
-const Modal = React.memo( function Modal( {visiblity , displayModalHandler ,updateData} ){
+const Modal = React.memo( function Modal( {visiblity , displayModalHandler ,updateData , meals, weekdays} ){
 
-    const meals = ["breakfast","lunch","snacks" ,"dinner"];
-    const weekdays = ["monday" , "tuesday" , "wednesday" , "thursday" ,"friday" , "saturday" ,"sunday"];
 
     // Day Selected by user
     const [day, setDay ] = React.useState("monday");
