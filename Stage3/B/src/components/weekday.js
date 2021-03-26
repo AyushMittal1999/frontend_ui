@@ -6,7 +6,7 @@ var Weekday = React.memo(function Weekday(_ref) {
 
     var meals = constants.MEALS;
 
-    console.log("weekday ", day);
+    // console.log( "weekday ", day );
     return React.createElement(
         "div",
         { id: day },

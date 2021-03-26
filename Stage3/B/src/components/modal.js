@@ -129,7 +129,7 @@ var Modal = React.memo(function Modal(_ref) {
         setParsedFoodItems([]);
     }
 
-    console.log("modal");
+    // console.log( "modal");
     return React.createElement(
         "div",
         { className: "modal-cover", style: { display: visiblity ? "block" : "none" } },

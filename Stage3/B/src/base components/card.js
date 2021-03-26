@@ -51,7 +51,7 @@ var Card = React.memo(function Card(_ref) {
         _ref$data = _ref.data,
         data = _ref$data === undefined ? [] : _ref$data;
 
-    console.log("card");
+    // console.log( "card");
     return (
         // Card layout, div main parent
         React.createElement(
