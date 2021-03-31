@@ -109,12 +109,13 @@ h2[class$="day__minor-heading"] {
   position: sticky;
   top: 100px;
   margin-top: 0px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   margin-bottom: 0px;
   font-size: 20px;
   background-color: white;
   padding-bottom: 15px;
-  padding-top: 10px;
+  padding-top: 15px;
+  padding-left: 10px;
 }
 /************* Weekday Schedule ****************/
 section[class$="day-schedule__card-holder"] {
@@ -393,7 +394,7 @@ body {
 }
 
 hr:not([class="major__hr"]) {
-  position: sticky;
-  top: 135px;
+  /* position: sticky; */
+  /* top: 146px; */
   margin: 0px;
 }
