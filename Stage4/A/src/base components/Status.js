@@ -16,7 +16,7 @@ const Status = React.memo(function Status({ statusVisiblity, message = "" }) {
         className="status__success"
         style={{ display: statusVisiblity == 1 ? "" : "none" }}
       >
-        <img src="../resources/images/tick.jpg" alt="success" />
+        <img src="resources/images/tick.jpg" alt="success" />
         <div> Update Successful {message}</div>
       </div>
 
@@ -26,7 +26,7 @@ const Status = React.memo(function Status({ statusVisiblity, message = "" }) {
         className="status__fail"
         style={{ display: statusVisiblity == 0 ? "" : "none" }}
       >
-        <img src="../resources/images/wrong.jpg" alt="error" />
+        <img src="resources/images/wrong.jpg" alt="error" />
         <div>
           {" "}
           Update Failed.. {message == "" ? "Please Try Again" : message}
