@@ -1,11 +1,11 @@
-const {
+import {
   SHOW_MODAL,
   HIDE_MODAL,
   UPDATE_DATA,
   SHOW_SUCCESS,
   SHOW_FAIL,
   HIDE_STATUS,
-} = require("../constants/Constants");
+} from "../constants/Constants";
 
 import { combineReducers, createStore } from "redux";
 import { getLocalData } from "../objectmodel/LocalStorage";
