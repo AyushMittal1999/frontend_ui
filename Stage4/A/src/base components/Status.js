@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import img_tick from "../../resources/images/tick.jpg";
+import img_wrong from "../../resources/images/wrong.jpg";
 
 const Status = React.memo(function Status({ statusVisiblity, message = "" }) {
   // render status
@@ -16,7 +18,7 @@ const Status = React.memo(function Status({ statusVisiblity, message = "" }) {
         className="status__success"
         style={{ display: statusVisiblity == 1 ? "" : "none" }}
       >
-        <img src="resources/images/tick.jpg" alt="success" />
+        <img src={img_tick} alt="success" />
         <div> Update Successful {message}</div>
       </div>
 
@@ -26,7 +28,7 @@ const Status = React.memo(function Status({ statusVisiblity, message = "" }) {
         className="status__fail"
         style={{ display: statusVisiblity == 0 ? "" : "none" }}
       >
-        <img src="resources/images/wrong.jpg" alt="error" />
+        <img src={img_wrong} alt="error" />
         <div>
           {" "}
           Update Failed.. {message == "" ? "Please Try Again" : message}

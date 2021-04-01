@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const port = process.env.PORT || 3000;
 
 module.exports = {
@@ -20,10 +21,17 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
             loader: "file-loader",
+            options: {
+              outputPath: "images",
+            },
           },
         ],
       },

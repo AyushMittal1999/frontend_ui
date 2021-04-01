@@ -3,6 +3,13 @@ import { connect } from "react-redux";
 import Card from "../base components/Card";
 import { MEALS } from "../constants/Constants";
 
+import img_breakfast from "../../resources/images/breakfast.jpg";
+import img_snacks from "../../resources/images/snacks.jpg";
+import img_lunch from "../../resources/images/lunch.jpg";
+import img_dinner from "../../resources/images/dinner.jpg";
+
+const images = [img_breakfast, img_lunch, img_snacks, img_dinner];
+
 const Weekday = memo(function Weekday({ day, schedule }) {
   const meals = MEALS;
 
@@ -18,7 +25,7 @@ const Weekday = memo(function Weekday({ day, schedule }) {
         {/* Grouping two meal (Breakfast and lunch) card under one div for UI purpose */}
         <div className="day-schedule__two-card-group">
           {/* Creating a card layout corresponding to each meal */}
-          {meals.slice(0, 2).map((m) => {
+          {meals.slice(0, 2).map((m, ind) => {
             return (
               <Card
                 key={m}
@@ -27,7 +34,7 @@ const Weekday = memo(function Weekday({ day, schedule }) {
                   `card__image-holder`,
                   "card__text-holder",
                 ]}
-                img={{ src: `resources/images/${m}.jpg`, alt: m }}
+                img={{ src: images[ind], alt: m }}
                 data={schedule[m]}
                 compareDataOnly={1}
               />
@@ -38,7 +45,7 @@ const Weekday = memo(function Weekday({ day, schedule }) {
         {/* Grouping two meal (Snacks and dinner) card under one div for UI purpose */}
         <div className="day-schedule__two-card-group">
           {/* Creating a card layout corresponding to each meal */}
-          {meals.slice(2, 4).map((m) => {
+          {meals.slice(2, 4).map((m, ind) => {
             return (
               <Card
                 key={m}
@@ -47,7 +54,7 @@ const Weekday = memo(function Weekday({ day, schedule }) {
                   `card__image-holder`,
                   "card__text-holder",
                 ]}
-                img={{ src: `resources/images/${m}.jpg`, alt: m }}
+                img={{ src: images[2 + ind], alt: m }}
                 data={schedule[m]}
                 compareDataOnly={1}
               />

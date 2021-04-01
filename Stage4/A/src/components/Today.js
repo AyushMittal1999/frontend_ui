@@ -4,6 +4,8 @@ import Card from "../base components/Card";
 import Heading from "../base components/Heading";
 import { MEALS } from "../constants/Constants";
 
+import img_diet from "../../resources/images/diet.jpg";
+
 const Today = memo(function Today({ schedule }) {
   const meals = MEALS;
 
@@ -29,7 +31,7 @@ const Today = memo(function Today({ schedule }) {
           "today-schedule-content__ulcover",
         ]}
         data={data}
-        img={{ src: "resources/images/diet.jpg", alt: "schedule-image" }}
+        img={{ src: img_diet, alt: "schedule-image" }}
         ul={{ className: "today-schedule-content__ul" }}
       ></Card>
       {/* Not using compare dataOnly because its obevious to render card if today is re rendering */}

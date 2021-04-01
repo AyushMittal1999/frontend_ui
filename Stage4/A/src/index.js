@@ -4,6 +4,9 @@ import { Provider } from "react-redux";
 import App from "./App";
 import store from "./redux/Store";
 
+import "../public/mobile.css";
+import "../public/style.css";
+
 function Index() {
   return (
     <React.StrictMode>
