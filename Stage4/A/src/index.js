@@ -4,8 +4,8 @@ import { Provider } from "react-redux";
 import App from "./App";
 import store from "./redux/Store";
 
-import "../public/mobile.css";
-import "../public/style.css";
+import "../src/mobile.css";
+import "../src/style.css";
 
 function Index() {
   return (

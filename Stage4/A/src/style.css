@@ -88,7 +88,7 @@
   /******** Weekly Schedule Heading ***********/
   #schedule-heading {
     position: sticky;
-    top: 100px;
+    top: 95px;
     background-color: white;
     padding-top: 10px;
   }
