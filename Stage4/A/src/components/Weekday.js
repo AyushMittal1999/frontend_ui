@@ -1,7 +1,8 @@
 import React, { memo } from "react";
 import { connect } from "react-redux";
 import Card from "../base components/Card";
-import { MEALS } from "../constants/Constants";
+import { MEALS, WEEKDAYS } from "../constants/Constants";
+import PropTypes from "prop-types";
 
 import img_breakfast from "../../resources/images/breakfast.jpg";
 import img_snacks from "../../resources/images/snacks.jpg";
@@ -67,7 +68,25 @@ const Weekday = memo(function Weekday({ day, schedule }) {
 }); //Rerender the day only if any update has happened to any of its props
 // schedule props(reference i.e. only shallow compare required)  will be updated if any update has occured for a day
 
-export default connect(
+function validateScheduleProp() {
+  let obj = {};
+  MEALS.forEach((meal) => {
+    obj[meal] = PropTypes.arrayOf(PropTypes.string); // for every meal there must be an array for strings
+  });
+  return obj;
+}
+Weekday.propTypes = {
+  day: PropTypes.oneOf(WEEKDAYS).isRequired,
+  schedule: PropTypes.shape(validateScheduleProp()).isRequired,
+};
+
+const WeekdayWithConnect = connect(
   ({ data }, ownProps) => ({ schedule: data[ownProps.day] }),
   null
 )(Weekday);
+
+WeekdayWithConnect.propTypes = {
+  day: PropTypes.oneOf(WEEKDAYS).isRequired,
+};
+
+export default WeekdayWithConnect;

@@ -3,6 +3,7 @@ import { batch, connect } from "react-redux";
 import Heading from "../base components/Heading";
 import { MEALS, WEEKDAYS } from "../constants/Constants";
 import { updateMealAtLocal } from "../objectmodel/LocalStorage";
+import PropTypes from "prop-types";
 import {
   hideModal,
   hideStatus,
@@ -178,6 +179,36 @@ const Modal = memo(function Modal({
   );
 }); // Rerender Modal due to parent state only if visiblity is updated
 
+Modal.propTypes = {
+  visiblity: PropTypes.bool.isRequired,
+  displayModalHandler: function (props, propName, componentName) {
+    const fn = props[propName];
+    if (
+      !fn ||
+      !fn.prototype ||
+      typeof fn.prototype.constructor !== "function" ||
+      fn.prototype.constructor.length !== 1
+    ) {
+      return new Error(
+        propName + "must be a function with 1 args " + " in " + componentName
+      );
+    }
+  },
+  updateData: function (props, propName, componentName) {
+    const fn = props[propName];
+    if (
+      !fn ||
+      !fn.prototype ||
+      typeof fn.prototype.constructor !== "function" ||
+      fn.prototype.constructor.length !== 3
+    ) {
+      return new Error(
+        propName + "must be a function with 3 args " + " in " + componentName
+      );
+    }
+  },
+};
+
 const mapStateToProps = ({ modalVisiblity }) => {
   return { visiblity: modalVisiblity };
 };
@@ -235,4 +266,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+const ModalWithConnect = connect(mapStateToProps, mapDispatchToProps)(Modal);
+
+export default ModalWithConnect;
