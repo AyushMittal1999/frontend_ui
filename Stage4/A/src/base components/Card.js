@@ -26,14 +26,14 @@ const Card = React.memo(
   }) {
     return (
       // Card layout, div main parent
-      <div {...(parentClass != "" ? { className: parentClass } : {})}>
+      <div {...(parentClass !== "" ? { className: parentClass } : {})}>
         {/* Image holder div */}
-        <div {...(imgClass != "" ? { className: imgClass } : {})}>
+        <div {...(imgClass !== "" ? { className: imgClass } : {})}>
           <img {...img} alt="img"></img>
         </div>
 
         {/* Text holder div */}
-        <div {...(textClass != "" ? { className: textClass } : {})}>
+        <div {...(textClass !== "" ? { className: textClass } : {})}>
           {/* UL tag */}
           <ul {...ul}>
             {/* this is the logic separating card : Card for today schedule and weekday schedule
@@ -46,7 +46,7 @@ const Card = React.memo(
                     {item[0] + " "}
                     {/* Special Tag for Today schduole content for UI enchancement */}
                     <div className="inline-div">
-                      {item[1].length == 0 ? "nothing" : item[1]}
+                      {item[1].length === 0 ? "nothing" : item[1]}
                     </div>
                     {" " + item[2]}
                   </li>

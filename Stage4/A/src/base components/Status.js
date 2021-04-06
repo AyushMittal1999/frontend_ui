@@ -12,13 +12,13 @@ const Status = React.memo(function Status({ statusVisiblity, message = "" }) {
     <div
       id="status"
       className="status"
-      style={{ display: statusVisiblity == -1 ? "none" : "block" }}
+      style={{ display: statusVisiblity === -1 ? "none" : "block" }}
     >
       {/* Success is visible if isSucces is 1 */}
       <div
         id="status-success"
         className="status__success"
-        style={{ display: statusVisiblity == 1 ? "" : "none" }}
+        style={{ display: statusVisiblity === 1 ? "" : "none" }}
       >
         <img src={img_tick} alt="success" />
         <div> Update Successful {message}</div>
@@ -28,12 +28,12 @@ const Status = React.memo(function Status({ statusVisiblity, message = "" }) {
       <div
         id="status-fail"
         className="status__fail"
-        style={{ display: statusVisiblity == 0 ? "" : "none" }}
+        style={{ display: statusVisiblity === 0 ? "" : "none" }}
       >
         <img src={img_wrong} alt="error" />
         <div>
           {" "}
-          Update Failed.. {message == "" ? "Please Try Again" : message}
+          Update Failed.. {message === "" ? "Please Try Again" : message}
         </div>
       </div>
     </div>
