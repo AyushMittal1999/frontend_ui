@@ -217,13 +217,13 @@ const mapDispatchToProps = (dispatch) => {
   let refOfTimeout = undefined;
 
   return {
-    displayModalHandler: (show) => {
+    displayModalHandler: function (show) {
       if (show) {
         dispatch(showModal());
       } else dispatch(hideModal());
     },
 
-    updateData: (day, meal, items) => {
+    updateData: function (day, meal, items) {
       // Logic is designed such a way that if local storage is updayted succesfull then only
       // Page updates
 

@@ -3,15 +3,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const port = process.env.PORT || 3000;
 
+const mode = "development";
+
+process.env.BROWSERSLIST_ENV = mode;
+
 module.exports = {
   entry: "./src/index.js",
-  mode: "development",
+  mode: mode,
   output: {
     filename: "bundle.js",
   },
 
   devtool: "inline-source-map",
-
   module: {
     rules: [
       // First Rule

@@ -2,9 +2,13 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
+const mode = "production";
+
+process.env.BROWSERSLIST_ENV = mode;
+
 module.exports = {
   entry: "./src/index.js",
-  mode: "production",
+  mode: mode,
   output: {
     path: path.resolve("./build"),
     filename: "bundle.js",
