@@ -84,7 +84,6 @@ const Modal = memo(
       setFoodItems("");
       setParsedFoodItems([]);
     }
-    console.log("modal", visiblity);
     return (
       <div
         className="modal-cover"
