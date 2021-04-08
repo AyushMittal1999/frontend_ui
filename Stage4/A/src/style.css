@@ -172,7 +172,6 @@
 
   /**** Modal Cover for background-main parent****/
   .modal-cover {
-    display: none;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -259,7 +258,6 @@
     position: fixed;
     bottom: 20px;
     width: 100%;
-    display: none;
     z-index: 6;
   }
   /** status fail (Red color) ****/

@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { connect } from "react-redux";
-import Card from "../base components/Card";
+import Card from "../base_components/Card";
 import { MEALS, WEEKDAYS } from "../constants/Constants";
 import PropTypes from "prop-types";
 
@@ -35,7 +35,7 @@ const Weekday = memo(function Weekday({ day, schedule }) {
                   `card__image-holder`,
                   "card__text-holder",
                 ]}
-                img={{ src: images[ind], alt: m }}
+                imgAttributes={{ src: images[ind], alt: m }}
                 data={schedule[m]}
                 compareDataOnly={1}
               />
@@ -55,7 +55,7 @@ const Weekday = memo(function Weekday({ day, schedule }) {
                   `card__image-holder`,
                   "card__text-holder",
                 ]}
-                img={{ src: images[2 + ind], alt: m }}
+                imgAttributes={{ src: images[2 + ind], alt: m }}
                 data={schedule[m]}
                 compareDataOnly={1}
               />

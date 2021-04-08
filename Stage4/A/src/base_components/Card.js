@@ -20,22 +20,22 @@ function shallowEqual(object1, object2) {
 const Card = React.memo(
   function Card({
     classes: [parentClass = "", imgClass = "", textClass = ""],
-    img,
-    ul,
+    imgAttributes,
+    ulAttributes,
     data = [],
   }) {
     return (
       // Card layout, div main parent
-      <div {...(parentClass !== "" ? { className: parentClass } : {})}>
+      <div className={parentClass || ""}>
         {/* Image holder div */}
-        <div {...(imgClass !== "" ? { className: imgClass } : {})}>
-          <img {...img} alt="img"></img>
+        <div className={imgClass || ""}>
+          <img {...imgAttributes} alt="img"></img>
         </div>
 
         {/* Text holder div */}
-        <div {...(textClass !== "" ? { className: textClass } : {})}>
+        <div className={textClass || ""}>
           {/* UL tag */}
-          <ul {...ul}>
+          <ul {...ulAttributes}>
             {/* this is the logic separating card : Card for today schedule and weekday schedule
                     Today Schedule expect 2-D array [ [ have , .... , in (dinnee/lunch) ] ]
                     Weekday schedule expect 1-D array[ ... ,... ,..........] */}

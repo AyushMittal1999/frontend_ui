@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { connect } from "react-redux";
-import Card from "../base components/Card";
-import Heading from "../base components/Heading";
+import Card from "../base_components/Card";
+import Heading from "../base_components/Heading";
 import { MEALS, WEEKDAYS } from "../constants/Constants";
 import PropTypes from "prop-types";
 import img_diet from "../../resources/images/diet.jpg";
@@ -19,7 +19,7 @@ const Today = memo(function Today({ schedule }) {
     <div id="today-schedule">
       <Heading
         type="2"
-        child={{ className: "today-schedule__major-heading" }}
+        className="today-schedule__major-heading"
         value="Today's Diet Plan"
       />
       <hr className="major__hr"></hr>
@@ -31,8 +31,8 @@ const Today = memo(function Today({ schedule }) {
           "today-schedule-content__ulcover",
         ]}
         data={data}
-        img={{ src: img_diet, alt: "schedule-image" }}
-        ul={{ className: "today-schedule-content__ul" }}
+        imgAttributes={{ src: img_diet, alt: "schedule-image" }}
+        ulAttributes={{ className: "today-schedule-content__ul" }}
       ></Card>
       {/* Not using compare dataOnly because its obevious to render card if today is re rendering */}
     </div>
