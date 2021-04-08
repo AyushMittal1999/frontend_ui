@@ -58,8 +58,16 @@ class Model{
 
         if( day && meal && items ){
 
-            items.filter( item => (item && (item!="" )) )
-
+            // Avoid Duplicates
+            let taken = new Map();
+            for( const ele of items){
+                if(  ele !="" && ! taken.has(ele.toLowerCase()  ) ){
+                    taken.set( ele.toLowerCase() , ele );
+                }
+            }
+            items = Array.from( taken.values() );
+            
+            
             if( (day in this.schedule) && (meal in this.schedule[day] )  ){
                 this.schedule[day][meal] = items ;
                 this.#compressedData[ this.#WEEKDAYS.indexOf( day) ][ this.#MEALS.indexOf(meal) ] = items  ;

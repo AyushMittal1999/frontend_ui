@@ -1,24 +1,25 @@
 <!doctype html>
-
-<html>
+<html lang="en">
     <head>
         <title>My Meal Plan</title>
-        <link rel="stylesheet" href="design new.css">
-    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" media=" all and (min-width: 601px)" href="design new.css">
+        <link rel="stylesheet"  media="all and (max-width: 600px)" href="mobile.css" />
+
     </head>
 
     <body>
 
-        <div id ="modal-cover">
-            <div id="modal">
+        <div id ="modal-cover" class="modal-cover">
+            <div  class ="modal">
 
-                <button id="modal-close-button" >&times</button>
+                <button id="modal-close-button" class ="btn btn--right" >&times</button>
     
-                <div id="modal-heading">
+                <div class="main-heading">
                     <h3>Edit Schedule</h3>
                 </div>
 
-                <div id ="modal-form-div">
+                <div >
                     <form id="modal-form" onsubmit="return false">
                         <label for="days-select">Day: </label>
                         <select name = "days" id = "days-select">
@@ -47,35 +48,32 @@
                 </div>
 
 
-                <button id="modal-update-changes-button" class="button">Update Changes</button>
+                <button id="modal-update-changes-button" class="modal__submit-btn">Update Changes</button>
 
             </div>
     
         </div>
 
-        <div id ="heading"> 
+        <header id="main-heading">
             <h1>Diet Plan</h1>
-        </div>
+        </header>
 
-    
+        <section id ="today-schedule">
 
-        <div id = "today-schedule">
-            
-            <div id = "today-schedule-heading">
-
-                <h2 class = "major-heading">Today's Diet Plan</h2>
+            <div >
+                <h2 class = "today-schedule__major-heading">Today's Diet Plan</h2>
 
             </div>
-            <hr class="major-heading-hr">
+            <hr class="major__hr">
 
-            <div id="today-schedule-flex-div">
+            <div class="today-schedule__content">
 
-                <div id="today-schedule-image-div">
+                <div class="today-schedule-content__image-holder">
                     <img src="images/diet.jpg" height="100%" width="100%">
                 </div>
 
-                <div id = "today-schedule-ulcover-div">
-                    <ul class = "today-schedule-ui">
+                <div class = "today-schedule-content__ulcover">
+                    <ul class = "today-schedule-content__ul">
                         <li>Have <div id ="today-schedule-breakfast" class = "inline-div">...</div> in Breakfast</li>
                         <li>Have <div id ="today-schedule-lunch" class = "inline-div">...</div>  in Lunch</li>
                         <li>Have <div id ="today-schedule-snacks" class = "inline-div">...</div>  in Snacks</li>
@@ -84,37 +82,37 @@
                 </div>  
             </div>
 
-        </div>
+        </section>
 
-        <div id="schedule" >
+        <section id ="week-schedule"> 
 
             <div id = "schedule-heading">
 
-                    <div id ="schedule-heading-inner">
-                    <h2 class = "major-heading">Weekly Schedule</h2>
+                    <div class="schedule-heading__elem1">
+                    <h2 class = " h__inline schedule-heading__major-heading">Weekly Schedule</h2>
 
-                    <button id="edit-button" class = "button" >
+                    <button id="schedule-heading-edit-button" class = "btn btn__submit btn--right" >
                         Edit Schedule
                     </button>
                 </div>
-                <hr class="major-heading-hr">
+                <hr class="major__hr">
 
             </div>
 
-            <div id ="weekdays-wrap-div">
+            <div id ="weekdays-wrapper" class ="weekdays-wrapper__div">
 
                 <div id = "monday" >
-                    <h2 >Monday</h2>
+                    <h2 class="monday__minor-heading">Monday</h2>
                     <hr>
 
-                    <section class="monday-schedule" id="monday-schedule" class="day-schedule" >
+                    <section class="monday-schedule__card-holder" >
                     
-                        <div class = "breakfast card1">
-                            <div class = "breakfast-image-div">
+                        <div id="monday-breakfast-card" class = "card">
+                            <div class = "card__image-holder">
                                 <img src = "images/breakfast.jpg" height="200px" width="200px" alt="image">
                             </div>
-                                <div class="breakfast-meal-div textincard">
-                                    <ul class="food-item-list">
+                                <div class="card__text-holder">
+                                    <ul class="card_ul">
                                         <li>
                                             Milk
                                         </li>
@@ -123,77 +121,12 @@
                         </div>  
 
 
-                        <div class = "lunch card1">
-                            <div class = "lunch-image-div">
-                                <img src = "images/lunch.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="lunch-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                                        
-                        <div class = "snacks card1">
-                            <div class = "snacks-image-div">
+                        <div id="monday-snacks-card" class = "card">
+                            <div class = "card__image-holder">
                                 <img src = "images/snacks.jpg" height="200px" width="200px" alt="image">
                             </div>
-                                <div class="snacks-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Green Tea
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "dinner card1">
-                            <div class = "dinner-image-div">
-                                <img src = "images/dinner.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="dinner-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                    </section>
-
-                    
-
-
-                </div>
-
-                <div id = "tuesday" >
-                    <h2 >Tuesday</h2>
-                    <hr>
-
-                    <section class="tuesday-schedule" id="tuesday-schedule" class="day-schedule" >
-                    
-                        <div class = "breakfast card1">
-                            <div class = "breakfast-image-div">
-                                <img src = "images/breakfast.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="breakfast-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Cornflakes
-                                        </li>
+                                <div class="card__text-holder">
+                                    <ul class="card_ul">
                                         <li>
                                             Milk
                                         </li>
@@ -202,77 +135,12 @@
                         </div>  
 
 
-                        <div class = "lunch card1">
-                            <div class = "lunch-image-div">
+                        <div id="monday-lunch-card" class = "card">
+                            <div class = "card__image-holder">
                                 <img src = "images/lunch.jpg" height="200px" width="200px" alt="image">
                             </div>
-                            
-                                <div class="lunch-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                                        
-                        <div class = "snacks card1">
-                            <div class = "snacks-image-div">
-                                <img src = "images/snacks.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="snacks-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Green Tea
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "dinner card1">
-                            <div class = "dinner-image-div">
-                                <img src = "images/dinner.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="dinner-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                    </section>
-
-                    
-
-
-                </div>
-
-                <div id = "wednesday" >
-                    <h2 >Wednesday</h2>
-                    <hr>
-
-                    <section class="wednesday-schedule" id="wednesday-schedule" class="day-schedule" >
-                    
-                        <div class = "breakfast card1">
-                            <div class = "breakfast-image-div">
-                                <img src = "images/breakfast.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="breakfast-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Cornflakes
-                                        </li>
+                                <div class="card__text-holder">
+                                    <ul class="card_ul">
                                         <li>
                                             Milk
                                         </li>
@@ -280,78 +148,12 @@
                                 </div>
                         </div>  
 
-
-                        <div class = "lunch card1">
-                            <div class = "lunch-image-div">
-                                <img src = "images/lunch.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="lunch-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                                        
-                        <div class = "snacks card1">
-                            <div class = "snacks-image-div">
-                                <img src = "images/snacks.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="snacks-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Green Tea
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "dinner card1">
-                            <div class = "dinner-image-div">
+                        <div id="monday-dinner-card" class = "card">
+                            <div class = "card__image-holder">
                                 <img src = "images/dinner.jpg" height="200px" width="200px" alt="image">
                             </div>
-                            
-                                <div class="dinner-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                    </section>
-
-                    
-
-
-                </div>
-
-                <div id = "Thursday" >
-                    <h2 >Thursday</h2>
-                    <hr>
-
-                    <section class="thursday-schedule" id="thursday-schedule" class="day-schedule" >
-                    
-                        <div class = "breakfast card1">
-                            <div class = "breakfast-image-div">
-                                <img src = "images/breakfast.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="breakfast-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Cornflakes
-                                        </li>
+                                <div class="card__text-holder">
+                                    <ul class="card_ul">
                                         <li>
                                             Milk
                                         </li>
@@ -359,56 +161,6 @@
                                 </div>
                         </div>  
 
-
-                        <div class = "lunch card1">
-                            <div class = "lunch-image-div">
-                                <img src = "images/lunch.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="lunch-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                                        
-                        <div class = "snacks card1">
-                            <div class = "snacks-image-div">
-                                <img src = "images/snacks.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="snacks-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Green Tea
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "dinner card1">
-                            <div class = "dinner-image-div">
-                                <img src = "images/dinner.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="dinner-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
                     </section>
 
                     
@@ -416,251 +168,18 @@
 
                 </div>
 
-                <div id = "friday" >
-                    <h2 >Friday</h2>
-                    <hr>
-
-                    <section class="friday-schedule" id="friday-schedule" class="day-schedule" >
-                    
-                        <div class = "breakfast card1">
-                            <div class = "breakfast-image-div">
-                                <img src = "images/breakfast.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="breakfast-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Cornflakes
-                                        </li>
-                                        <li>
-                                            Milk
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "lunch card1">
-                            <div class = "lunch-image-div">
-                                <img src = "images/lunch.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="lunch-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                                        
-                        <div class = "snacks card1">
-                            <div class = "snacks-image-div">
-                                <img src = "images/snacks.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="snacks-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Green Tea
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "dinner card1">
-                            <div class = "dinner-image-div">
-                                <img src = "images/dinner.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="dinner-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                    </section>
-
-                    
-
-
-                </div>
-
-                <div id = "saturday" >
-                    <h2 >Saturday</h2>
-                    <hr>
-
-                    <section class="saturday-schedule" id="saturday-schedule" class="day-schedule" >
-                    
-                        <div class = "breakfast card1">
-                            <div class = "breakfast-image-div">
-                                <img src = "images/breakfast.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="breakfast-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Cornflakes
-                                        </li>
-                                        <li>
-                                            Milk
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "lunch card1">
-                            <div class = "lunch-image-div">
-                                <img src = "images/lunch.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="lunch-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                                        
-                        <div class = "snacks card1">
-                            <div class = "snacks-image-div">
-                                <img src = "images/snacks.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="snacks-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Green Tea
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "dinner card1">
-                            <div class = "dinner-image-div">
-                                <img src = "images/dinner.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="dinner-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                    </section>
-
-                    
-
-
-                </div>
-
-                <div id = "sunday" >
-                    <h2 >Sunday</h2>
-                    <hr>
-
-                    <section class="sunday-schedule" id="sunday-schedule" class="day-schedule" >
-                    
-                        <div class = "breakfast card1">
-                            <div class = "breakfast-image-div">
-                                <img src = "images/breakfast.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="breakfast-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Cornflakes
-                                        </li>
-                                        <li>
-                                            Milk
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "lunch card1">
-                            <div class = "lunch-image-div">
-                                <img src = "images/lunch.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="lunch-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                                        
-                        <div class = "snacks card1">
-                            <div class = "snacks-image-div">
-                                <img src = "images/snacks.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="snacks-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Green Tea
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div class = "dinner card1">
-                            <div class = "dinner-image-div">
-                                <img src = "images/dinner.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                            
-                                <div class="dinner-meal-div textincard">
-                                    <ul class="food-item-list">
-                                        <li>
-                                            Rice
-                                        </li>
-                                        <li>
-                                            Juice
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-
-                    </section>
-
-                    
-
-
-                </div>
-            
             </div>
 
-        </div>
+        </section>
 
-        <div id="status-update-div">
-            <div id ="success-status-update-div">
+        <div id ="status" class="status">
+            <div id ="status-success" class="status__success">
                 <img src ="images/tick.jpg"> 
                 <div> Update Successful </div>    
+            </div>
+            <div id ="status-fail" class="status__fail">
+                <img src ="images/wrong.jpg"> 
+                <div> Update Failed.. Please Try Again</div>    
             </div>
         </div>
 
