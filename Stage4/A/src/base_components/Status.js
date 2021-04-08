@@ -35,7 +35,7 @@ const Status = function Status({ statusVisiblity, message = "" }) {
       }
     </div>
   );
-}; // Re render after shallowing comparing properties
+};
 
 Status.protoTypes = {
   statusVisiblity: PropType.oneOf([1, -1, 0]).isRequired, // Require only 1 , 0 , -1 values to valid
