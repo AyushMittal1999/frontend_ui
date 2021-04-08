@@ -4,7 +4,7 @@ import PropType from "prop-types";
 import img_tick from "../../resources/images/tick.jpg";
 import img_wrong from "../../resources/images/wrong.jpg";
 
-const Status = React.memo(function Status({ statusVisiblity, message = "" }) {
+const Status = function Status({ statusVisiblity, message = "" }) {
   // render status
   return (
     //Parent is visible if isSuccess != -1
@@ -35,7 +35,7 @@ const Status = React.memo(function Status({ statusVisiblity, message = "" }) {
       }
     </div>
   );
-}); // Re render after shallowing comparing properties
+}; // Re render after shallowing comparing properties
 
 Status.protoTypes = {
   statusVisiblity: PropType.oneOf([1, -1, 0]).isRequired, // Require only 1 , 0 , -1 values to valid
