@@ -18,11 +18,7 @@ var Status = function Status(_ref) {
       ) : React.createElement(React.Fragment, null),
       isSuccess === 0 ? React.createElement(
         "div",
-        {
-          id: "status-fail",
-          className: "status__fail",
-          style: { display: isSuccess == 0 ? "" : "none" }
-        },
+        { id: "status-fail", className: "status__fail" },
         React.createElement("img", { src: "../resources/images/wrong.jpg", alt: "error" }),
         React.createElement(
           "div",
