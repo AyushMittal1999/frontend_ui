@@ -12,7 +12,7 @@ const Today = React.memo(
       <div id="today-schedule">
         <Heading
           type="2"
-          child={{ className: "today-schedule__major-heading" }}
+          className="today-schedule__major-heading"
           value="Today's Diet Plan"
         />
         <hr className="major__hr"></hr>
