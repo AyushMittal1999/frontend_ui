@@ -14,11 +14,7 @@ const Status = function Status({ isSuccess }) {
 
       {/* Fail is visible is isSuccess=0 */}
       {isSuccess === 0 ? (
-        <div
-          id="status-fail"
-          className="status__fail"
-          style={{ display: isSuccess == 0 ? "" : "none" }}
-        >
+        <div id="status-fail" className="status__fail">
           <img src="../resources/images/wrong.jpg" alt="error" />
           <div> Update Failed.. Please Try Again</div>
         </div>
