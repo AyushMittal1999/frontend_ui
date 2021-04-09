@@ -13,7 +13,7 @@ var Today = React.memo(function Today(_ref) {
     { id: "today-schedule" },
     React.createElement(Heading, {
       type: "2",
-      child: { className: "today-schedule__major-heading" },
+      className: "today-schedule__major-heading",
       value: "Today's Diet Plan"
     }),
     React.createElement("hr", { className: "major__hr" }),
