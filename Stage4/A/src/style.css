@@ -245,7 +245,7 @@
     background-color: #ffaeaef0;
     font-size: 30px;
     padding: 15px;
-    height: 50px;
+    height: 70px;
     width: 300px;
     display: flex;
     flex-direction: row;
@@ -260,7 +260,7 @@
     background-color: #c7f2c7;
     font-size: 30px;
     padding: 15px;
-    height: 50px;
+    height: 70px;
     width: 300px;
     display: flex;
     flex-direction: row;
@@ -272,7 +272,7 @@
 
   /******* Common to both fail and success ****/
   .status img {
-    width: 50px;
+    width: 70px;
     height: 100%;
     margin-right: 20px;
   }
