@@ -1,18 +1,29 @@
 @media all and (max-width: 600px) {
   /******************** Main Heading (Diet Plan) ********************/
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
   #main-heading {
-    background-color: #ecd6ae;
-    position: fixed;
+    margin-top: 0px;
+    position: sticky;
     width: 100%;
     top: 0px;
+    background-color: #ecd6ae;
     z-index: 2;
+    left: 0px;
+    right: 0px;
   }
 
   #main-heading h1 {
     /* font-size: 40px; */
     font-size: 30px;
-    margin: 18px;
-    margin-left: 30px;
+    padding: 18px;
+    margin: 0px;
   }
 
   /*******************************************************************************/
@@ -21,7 +32,7 @@
 
   /****** Today Schedule ( Main Parent) *********/
   #today-schedule {
-    margin-top: 75px;
+    margin-top: 10px;
     margin-bottom: 10px;
   }
 
@@ -71,13 +82,14 @@
     border: 1px dashed gray;
     padding: 10px;
     overflow: auto;
-    margin-top: 5px;
+    margin-top: 10px;
   }
   .today-schedule-content__ul {
     height: 100%;
     margin: 0px;
     padding: 10px;
     padding-left: 40px;
+    overflow-wrap: anywhere;
     overflow: auto;
     box-sizing: border-box;
   }
@@ -101,7 +113,7 @@
   }
 
   .schedule-heading__elem1 {
-    padding-top: 15px;
+    padding-top: 20px;
     padding-bottom: 10px;
   }
 
@@ -116,7 +128,7 @@
     font-size: 20px;
     background-color: white;
     padding-bottom: 15px;
-    padding-top: 15px;
+    padding-top: 20px;
     padding-left: 10px;
   }
   /************* Weekday Schedule ****************/
@@ -133,24 +145,24 @@
   .card {
     display: flex;
     height: 150px;
-    width: 90%;
+    /* width: 90%; */
     /* flex: 1; */
     /* width: calc(25% - 20px); */
     flex-direction: row;
     flex-wrap: wrap;
+    width: 95%;
+
     margin: auto;
     margin-top: 15px;
     border: 1px dashed gray;
     box-sizing: border-box;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0px 0px 3px 1px grey;
+    /* box-shadow: 0px 0px 3px 1px grey; */
   }
 
   /****** minor addition for UI enhancement *******/
-  section[class$="day-schedule__card-holder"] {
-    width: 100%;
-  }
+
   .day-schedule__two-card-group {
     width: 100%;
   }
@@ -328,10 +340,6 @@
   li {
     padding: 5px;
   }
-  body {
-    margin-left: 2px;
-    margin-right: 2px;
-  }
 
   img {
     width: 100%;
@@ -375,11 +383,6 @@
     text-align: justify;
     font-size: 15px;
     text-align: center;
-  }
-
-  body {
-    margin-left: 2px;
-    margin-right: 2px;
   }
 
   hr:not([class="major__hr"]) {
