@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { hideModal, showModal } from "../redux/Actioncreators";
 
 const WeekScheduleHeading = memo(
-  function WeekScheduleHeading({ displayModalHandler, ...rest }) {
+  function WeekScheduleHeading({ displayModalHandler }) {
     const handleClick = () => {
       displayModalHandler(true);
     };
     return (
-      <div id="schedule-heading" {...rest}>
+      <div id="schedule-heading">
         <div className="schedule-heading__elem1">
           <h2 className=" h__inline schedule-heading__major-heading">
             Weekly Schedule
