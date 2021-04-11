@@ -11,6 +11,7 @@ module.exports = {
   entry: "./src/index.js",
   mode: mode,
   output: {
+    publicPath: "",
     filename: "bundle.js",
   },
 
@@ -52,6 +53,7 @@ module.exports = {
     port: port,
     historyApiFallback: true,
     open: true,
+
     contentBase: "public/",
   },
 };

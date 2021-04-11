@@ -128,28 +128,6 @@
     /* overflow: hidden; */
   }
 
-  /****** minor addition for UI enhancement *******/
-  @media screen and (max-width: 1320px) {
-    section[class$="day-schedule__card-holder"] {
-      flex-direction: column;
-    }
-    .day-schedule__two-card-group {
-      display: flex;
-      flex: 1;
-      flex-wrap: wrap;
-      max-width: 100%;
-    }
-  }
-
-  @media screen and (min-width: 1320px) {
-    .day-schedule__two-card-group {
-      display: flex;
-      flex: 1;
-      flex-wrap: wrap;
-      max-width: 50%;
-    }
-  }
-
   .card__image-holder {
     flex: 4;
     height: 100%;
@@ -350,4 +328,26 @@
     text-align: justify;
   }
   /*******************************************************************************/
+}
+
+/****** minor addition for UI enhancement *******/
+@media screen and (max-width: 1150px) and (min-width: 601px) {
+  section[class$="day-schedule__card-holder"] {
+    flex-direction: column;
+  }
+  .day-schedule__two-card-group {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .day-schedule__two-card-group {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    max-width: 50%;
+  }
 }

@@ -126,17 +126,18 @@
     /* align-items: center; */
     justify-content: center;
     margin: 10px;
+    /* height: 800px; */
   }
   /********** One meal Card ************/
   .card {
     display: flex;
-    height: 200px;
-    flex: 1;
+    height: 150px;
+    width: 90%;
+    /* flex: 1; */
     /* width: calc(25% - 20px); */
-    min-width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0px;
+    margin: auto;
     margin-top: 10px;
     border: 1px dashed gray;
     box-sizing: border-box;
@@ -144,29 +145,15 @@
   }
 
   /****** minor addition for UI enhancement *******/
-  @media screen and (max-width: 1320px) {
-    section[class$="day-schedule__card-holder"] {
-      flex-direction: column;
-    }
-    .day-schedule__two-card-group {
-      display: flex;
-      flex: 1;
-      flex-wrap: wrap;
-      max-width: 100%;
-    }
+  section[class$="day-schedule__card-holder"] {
+    width: 100%;
   }
-
-  @media screen and (min-width: 1320px) {
-    .day-schedule__two-card-group {
-      display: flex;
-      flex: 1;
-      flex-wrap: wrap;
-      max-width: 50%;
-    }
+  .day-schedule__two-card-group {
+    width: 100%;
   }
 
   .card__image-holder {
-    flex: 4;
+    flex: 3;
     height: 100%;
   }
 
