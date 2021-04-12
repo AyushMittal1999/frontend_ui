@@ -10,6 +10,7 @@ module.exports = {
   entry: "./src/index.js",
   mode: mode,
   output: {
+    publicPath: "",
     path: path.resolve("./build"),
     filename: "bundle.js",
   },
