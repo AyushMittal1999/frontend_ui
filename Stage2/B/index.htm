@@ -1,203 +1,214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>My Meal Plan</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" media=" all and (min-width: 601px)" href="design new.css">
-        <link rel="stylesheet"  media="all and (max-width: 600px)" href="mobile.css" />
+  <head>
+    <title>My Meal Plan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      media=" all and (min-width: 601px)"
+      href="design new.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all and (max-width: 600px)"
+      href="mobile.css"
+    />
+  </head>
 
-    </head>
+  <body>
+    <div id="modal-cover" class="modal-cover">
+      <div class="modal">
+        <button id="modal-close-button" class="btn btn--right">&times</button>
 
-    <body>
-
-        <div id ="modal-cover" class="modal-cover">
-            <div  class ="modal">
-
-                <button id="modal-close-button" class ="btn btn--right" >&times</button>
-    
-                <div class="main-heading">
-                    <h3>Edit Schedule</h3>
-                </div>
-
-                <div >
-                    <form id="modal-form" onsubmit="return false">
-                        <label for="days-select">Day: </label>
-                        <select name = "days" id = "days-select">
-                            <option value="monday">Monday</option>
-                            <option value="tuesday">Tuesday</option>
-                            <option value="wednesday">Wednesday</option>
-                            <option value="thursday">Thursday</option>
-                            <option value="friday">Friday</option>
-                            <option value="saturday">Saturday</option>
-                            <option value="sunday">Sunday</option>
-                        </select>
-                        <br>
-                        <label for="meal-select">Time Of Day: </label>
-                        <select name = "meal" id = "meal-select">
-                            <option value="breakfast">Breakfast</option>
-                            <option value="lunch">Lunch</option>
-                            <option value="snacks">Snacks</option>
-                            <option value="dinner">Dinner</option>    
-                        </select>
-                        <br>
-                        <label for="food-input">Food Items (separated by ;) : </label>
-                        <input name="food" id="food-input" type="text" >
-                        <!-- <button id="modal-add-button" >Add</button> -->
-
-                    </form>
-                </div>
-
-
-                <button id="modal-update-changes-button" class="modal__submit-btn">Update Changes</button>
-
-            </div>
-    
+        <div class="main-heading">
+          <h3>Edit Schedule</h3>
         </div>
 
-        <header id="main-heading">
-            <h1>Diet Plan</h1>
-        </header>
-
-        <section id ="today-schedule">
-
-            <div >
-                <h2 class = "today-schedule__major-heading">Today's Diet Plan</h2>
-
-            </div>
-            <hr class="major__hr">
-
-            <div class="today-schedule__content">
-
-                <div class="today-schedule-content__image-holder">
-                    <img src="images/diet.jpg" height="100%" width="100%">
-                </div>
-
-                <div class = "today-schedule-content__ulcover">
-                    <ul class = "today-schedule-content__ul">
-                        <li>Have <div id ="today-schedule-breakfast" class = "inline-div">...</div> in Breakfast</li>
-                        <li>Have <div id ="today-schedule-lunch" class = "inline-div">...</div>  in Lunch</li>
-                        <li>Have <div id ="today-schedule-snacks" class = "inline-div">...</div>  in Snacks</li>
-                        <li>Have <div id ="today-schedule-dinner" class = "inline-div">...</div>  in Dinner</li>
-                    </ul>
-                </div>  
-            </div>
-
-        </section>
-
-        <section id ="week-schedule"> 
-
-            <div id = "schedule-heading">
-
-                    <div class="schedule-heading__elem1">
-                    <h2 class = " h__inline schedule-heading__major-heading">Weekly Schedule</h2>
-
-                    <button id="schedule-heading-edit-button" class = "btn btn__submit btn--right" >
-                        Edit Schedule
-                    </button>
-                </div>
-                <hr class="major__hr">
-
-            </div>
-
-            <div id ="weekdays-wrapper" class ="weekdays-wrapper__div">
-
-                <div id = "monday" >
-                    <h2 class="monday__minor-heading">Monday</h2>
-                    <hr>
-
-                    <section class="monday-schedule__card-holder" >
-                    
-                        <div id="monday-breakfast-card" class = "card">
-                            <div class = "card__image-holder">
-                                <img src = "images/breakfast.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="card__text-holder">
-                                    <ul class="card_ul">
-                                        <li>
-                                            Milk
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div id="monday-snacks-card" class = "card">
-                            <div class = "card__image-holder">
-                                <img src = "images/snacks.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="card__text-holder">
-                                    <ul class="card_ul">
-                                        <li>
-                                            Milk
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-
-                        <div id="monday-lunch-card" class = "card">
-                            <div class = "card__image-holder">
-                                <img src = "images/lunch.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="card__text-holder">
-                                    <ul class="card_ul">
-                                        <li>
-                                            Milk
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-                        <div id="monday-dinner-card" class = "card">
-                            <div class = "card__image-holder">
-                                <img src = "images/dinner.jpg" height="200px" width="200px" alt="image">
-                            </div>
-                                <div class="card__text-holder">
-                                    <ul class="card_ul">
-                                        <li>
-                                            Milk
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>  
-
-                    </section>
-
-                    
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <div id ="status" class="status">
-            <div id ="status-success" class="status__success">
-                <img src ="images/tick.jpg"> 
-                <div> Update Successful </div>    
-            </div>
-            <div id ="status-fail" class="status__fail">
-                <img src ="images/wrong.jpg"> 
-                <div> Update Failed.. Please Try Again</div>    
-            </div>
+        <div>
+          <form id="modal-form" onsubmit="return false">
+            <label for="days-select">Day: </label>
+            <select name="days" id="days-select">
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+              <option value="sunday">Sunday</option>
+            </select>
+            <br />
+            <label for="meal-select">Time Of Day: </label>
+            <select name="meal" id="meal-select">
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="snacks">Snacks</option>
+              <option value="dinner">Dinner</option>
+            </select>
+            <br />
+            <label for="food-input">Food Items (separated by ;) : </label>
+            <input name="food" id="food-input" type="text" />
+            <!-- <button id="modal-add-button" >Add</button> -->
+          </form>
         </div>
 
-    </body>
+        <button id="modal-update-changes-button" class="modal__submit-btn">
+          Update Changes
+        </button>
+      </div>
+    </div>
 
-    <script src="js/view.js" type="text/javascript">
-    </script>
+    <header id="main-heading">
+      <h1>Diet Plan</h1>
+    </header>
 
-   <script src="js/controller.js" type="text/javascript">
-    </script>
-    
-   <script src="js/model.js" type="text/javascript">
-   </script>
+    <section id="today-schedule">
+      <div>
+        <h2 class="today-schedule__major-heading">Today's Diet Plan</h2>
+      </div>
+      <hr class="major__hr" />
 
-    <script src="js/service.js" type="text/javascript">
-    </script>
+      <div class="today-schedule__content">
+        <div class="today-schedule-content__image-holder">
+          <img src="images/diet.jpg" height="100%" width="100%" />
+        </div>
 
-    <script src="js/app.js" type="text/javascript">
-    </script>
-    
+        <div class="today-schedule-content__ulcover">
+          <ul class="today-schedule-content__ul">
+            <li>
+              Have
+              <div id="today-schedule-breakfast" class="inline-div">...</div>
+              in Breakfast
+            </li>
+            <li>
+              Have
+              <div id="today-schedule-lunch" class="inline-div">...</div>
+              in Lunch
+            </li>
+            <li>
+              Have
+              <div id="today-schedule-snacks" class="inline-div">...</div>
+              in Snacks
+            </li>
+            <li>
+              Have
+              <div id="today-schedule-dinner" class="inline-div">...</div>
+              in Dinner
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="week-schedule">
+      <div id="schedule-heading">
+        <div class="schedule-heading__elem1">
+          <h2 class="h__inline schedule-heading__major-heading">
+            Weekly Schedule
+          </h2>
+
+          <button
+            id="schedule-heading-edit-button"
+            class="btn btn__submit btn--right"
+          >
+            Edit Schedule
+          </button>
+        </div>
+        <hr class="major__hr" />
+      </div>
+
+      <div id="weekdays-wrapper" class="weekdays-wrapper__div">
+        <div id="monday">
+          <h2 class="monday__minor-heading">Monday</h2>
+          <hr />
+
+          <section class="monday-schedule__card-holder">
+            <div id="monday-breakfast-card" class="card">
+              <div class="card__image-holder">
+                <img
+                  src="images/breakfast.jpg"
+                  height="200px"
+                  width="200px"
+                  alt="image"
+                />
+              </div>
+              <div class="card__text-holder">
+                <ul class="card_ul">
+                  <li>Milk</li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="monday-snacks-card" class="card">
+              <div class="card__image-holder">
+                <img
+                  src="images/snacks.jpg"
+                  height="200px"
+                  width="200px"
+                  alt="image"
+                />
+              </div>
+              <div class="card__text-holder">
+                <ul class="card_ul">
+                  <li>Milk</li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="monday-lunch-card" class="card">
+              <div class="card__image-holder">
+                <img
+                  src="images/lunch.jpg"
+                  height="200px"
+                  width="200px"
+                  alt="image"
+                />
+              </div>
+              <div class="card__text-holder">
+                <ul class="card_ul">
+                  <li>Milk</li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="monday-dinner-card" class="card">
+              <div class="card__image-holder">
+                <img
+                  src="images/dinner.jpg"
+                  height="200px"
+                  width="200px"
+                  alt="image"
+                />
+              </div>
+              <div class="card__text-holder">
+                <ul class="card_ul">
+                  <li>Milk</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <div id="status" class="status">
+      <div id="status-success" class="status__success">
+        <img src="images/tick.jpg" />
+        <div>Update Successful</div>
+      </div>
+      <div id="status-fail" class="status__fail">
+        <img src="images/wrong.jpg" />
+        <div>Update Failed.. Please Try Again</div>
+      </div>
+    </div>
+  </body>
+
+  <script src="js/view.js" type="text/javascript"></script>
+
+  <script src="js/controller.js" type="text/javascript"></script>
+
+  <script src="js/model.js" type="text/javascript"></script>
+
+  <script src="js/service.js" type="text/javascript"></script>
+
+  <script src="js/app.js" type="text/javascript"></script>
 </html>
