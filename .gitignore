@@ -1,1 +1,7 @@
 .DS_Store
+build/
+dist/
+.gitignore
+.vscode
+node_modules/
+extras/

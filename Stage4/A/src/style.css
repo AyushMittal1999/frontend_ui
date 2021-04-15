@@ -1,0 +1,355 @@
+@media all and (min-width: 601px) {
+  /******************** Main Heading (Diet Plan) ********************/
+
+  #main-heading {
+    background-color: #ecd6ae;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+  }
+
+  #main-heading h1 {
+    font-size: 40px;
+    margin-left: 30px;
+  }
+
+  /*******************************************************************************/
+
+  /******************************  Today Schedule  **********************/
+
+  /****** Today Schedule ( Main Parent) *********/
+  #today-schedule {
+    margin-top: 130px;
+    margin-bottom: 50px;
+  }
+
+  /******** Today Schedule Heading *******/
+  [class$="major-heading"] {
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px;
+    color: #c9461e;
+  }
+
+  /******* Today Schedule Content (image and text ) parent ******/
+  .today-schedule__content {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    max-width: 1500px;
+    height: 300px;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px dashed gray;
+  }
+
+  /** Image Holder Div in today schedule content***/
+  .today-schedule-content__image-holder {
+    flex: 2;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  /** Text Holder Div in today shedule content ***/
+  .today-schedule-content__ulcover {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    flex: 5;
+    background-color: #faf2e3;
+    font-size: 25px;
+    border-radius: 10px;
+    border: 1px dashed gray;
+    padding: 10px;
+    margin-left: 2%;
+    overflow: auto;
+  }
+  .today-schedule-content__ul {
+    height: 100%;
+    margin: 0px;
+    padding: 10px;
+    padding-left: 40px;
+    /* overflow: auto; */
+    box-sizing: border-box;
+  }
+  /** Food itme in today list (italic and bold) **/
+  .inline-div {
+    display: inline;
+    font-style: italic;
+    font-weight: bolder;
+  }
+
+  /*******************************************************************************/
+
+  /***************************** Weekly Schedule *************************/
+  /******** Weekly Schedule Heading ***********/
+  #schedule-heading {
+    position: sticky;
+    top: 95px;
+    background-color: white;
+    padding-top: 10px;
+  }
+
+  .schedule-heading__elem1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /*********** Weekday (Monday Tuesday) Heading *****/
+  h2[class$="day__minor-heading"] {
+    margin: 30px;
+    margin-bottom: 0px;
+    font-size: 30px;
+  }
+  /************* Weekday Schedule ****************/
+  section[class$="day-schedule__card-holder"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    margin: 10px;
+  }
+  /********** One meal Card ************/
+  .card {
+    display: flex;
+    height: 200px;
+    flex: 1;
+    width: calc(25% - 20px);
+    min-width: 250px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    border: 1px dashed gray;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px 1px grey;
+  }
+
+  .card__image-holder {
+    flex: 4;
+    height: 100%;
+  }
+
+  .card__text-holder {
+    flex: 5;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 30px;
+    padding: 5px;
+    background-color: lightgoldenrodyellow;
+    overflow: auto;
+    overflow-wrap: break-word;
+  }
+  /*******************************************************************************/
+
+  /**************************** Modal  *************************/
+
+  /**** Modal Cover for background-main parent****/
+  .modal-cover {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    top: 100px;
+    z-index: 1;
+  }
+
+  /*** main modal *****/
+  .modal {
+    width: 70%;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 10px;
+    bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    /* overflow: scroll; */
+    /* height: 100px; */
+  }
+
+  .modal__ul {
+    max-height: 150px;
+    width: 90%;
+    border: 1px dashed gray;
+    overflow: auto;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #f8fcfb;
+    word-break: break-word;
+  }
+
+  label {
+    padding: 5px;
+    margin: 10px;
+  }
+
+  select {
+    font-size: 25px;
+    padding: 5px;
+    margin: 10px;
+    /* width: 30%; */
+    /* width: 100%; */
+    width: 300px;
+    border-radius: 10px;
+  }
+
+  input {
+    font-size: 25px;
+    padding: 5px;
+    margin: 10px;
+    width: 70%;
+    min-width: 300px;
+    border-radius: 10px;
+  }
+
+  .modal__submit-btn {
+    position: relative;
+    left: calc(100% - 200px);
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    border-color: goldenrod;
+    font-weight: bolder;
+  }
+
+  ul:empty:after {
+    content: "Not updated yet";
+
+    font-style: italic;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  /*******************************************************************************/
+
+  /********************* Update Status Display *********************/
+  /*** main parent *****/
+  .status {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    z-index: 6;
+  }
+  /** status fail (Red color) ****/
+  .status__fail {
+    background-color: #ffaeaef0;
+    font-size: 30px;
+    padding: 15px;
+    height: 70px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px dashed gray;
+  }
+
+  /** status Success (Green color) ******/
+  .status__success {
+    background-color: #c7f2c7;
+    font-size: 30px;
+    padding: 15px;
+    height: 70px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px dashed gray;
+  }
+
+  /******* Common to both fail and success ****/
+  .status img {
+    width: 70px;
+    height: 100%;
+    margin-right: 20px;
+  }
+
+  .status div {
+    width: fit-content;
+    margin: auto;
+  }
+
+  /*******************************************************************************/
+
+  /************************ General Enhance ment specific to complete page **************************/
+  /** All list item *****/
+  li {
+    padding: 5px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /** ALL horizontal rule following headings**/
+  .major__hr {
+    height: 5px;
+    background-color: lightskyblue;
+    border-radius: 10px;
+  }
+
+  /** Inline elememnt ***/
+  .h__inline {
+    display: inline;
+  }
+
+  .btn--right {
+    float: right;
+  }
+
+  .btn {
+    font-size: 25px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    border-color: goldenrod;
+    padding: 10px;
+    cursor: pointer;
+    text-align: justify;
+  }
+
+  .btn--simple {
+    font-size: 25px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: justify;
+  }
+  /*******************************************************************************/
+}
+
+/****** minor addition for UI enhancement *******/
+@media screen and (max-width: 1150px) and (min-width: 601px) {
+  section[class$="day-schedule__card-holder"] {
+    flex-direction: column;
+  }
+  .day-schedule__two-card-group {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .day-schedule__two-card-group {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    max-width: 50%;
+  }
+}
