@@ -1,10 +1,10 @@
 import React from "react";
-import PropType from "prop-types";
+import PropTypes from "prop-types";
 
 import img_tick from "../../resources/images/tick.jpg";
 import img_wrong from "../../resources/images/wrong.jpg";
 
-const Status = function Status({ statusVisiblity, message = "" }) {
+function Status({ statusVisiblity, message = "" }) {
   // render status
   return (
     //Parent is visible if isSuccess != -1
@@ -35,10 +35,10 @@ const Status = function Status({ statusVisiblity, message = "" }) {
       }
     </div>
   );
-};
+}
 
-Status.protoTypes = {
-  statusVisiblity: PropType.oneOf([1, -1, 0]).isRequired, // Require only 1 , 0 , -1 values to valid
+Status.propTypes = {
+  statusVisiblity: PropTypes.oneOf([1, -1, 0]).isRequired, // Require only 1 , 0 , -1 values to valid
 };
 
 export default Status;
