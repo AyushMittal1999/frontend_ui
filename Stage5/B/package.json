@@ -2,6 +2,7 @@
   "name": "b",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ayushmittal1999.github.io/frontend_ui/Stage5/B/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
