@@ -1,14 +1,10 @@
 {
   "files": {
-    "main.css": "/frontend_ui/Stage5/A/static/css/main.efffdb07.chunk.css",
+    "main.css": "/frontend_ui/Stage5/A/static/css/main.b76137f3.chunk.css",
     "main.js": "/frontend_ui/Stage5/A/static/js/main.309e0545.chunk.js",
-    "main.js.map": "/frontend_ui/Stage5/A/static/js/main.309e0545.chunk.js.map",
     "runtime-main.js": "/frontend_ui/Stage5/A/static/js/runtime-main.573d3b34.js",
-    "runtime-main.js.map": "/frontend_ui/Stage5/A/static/js/runtime-main.573d3b34.js.map",
     "static/js/2.6318cbd7.chunk.js": "/frontend_ui/Stage5/A/static/js/2.6318cbd7.chunk.js",
-    "static/js/2.6318cbd7.chunk.js.map": "/frontend_ui/Stage5/A/static/js/2.6318cbd7.chunk.js.map",
     "index.html": "/frontend_ui/Stage5/A/index.html",
-    "static/css/main.efffdb07.chunk.css.map": "/frontend_ui/Stage5/A/static/css/main.efffdb07.chunk.css.map",
     "static/js/2.6318cbd7.chunk.js.LICENSE.txt": "/frontend_ui/Stage5/A/static/js/2.6318cbd7.chunk.js.LICENSE.txt",
     "static/media/breakfast.32e563c1.jpg": "/frontend_ui/Stage5/A/static/media/breakfast.32e563c1.jpg",
     "static/media/diet.bb59c8b9.jpg": "/frontend_ui/Stage5/A/static/media/diet.bb59c8b9.jpg",
@@ -20,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.573d3b34.js",
     "static/js/2.6318cbd7.chunk.js",
-    "static/css/main.efffdb07.chunk.css",
+    "static/css/main.b76137f3.chunk.css",
     "static/js/main.309e0545.chunk.js"
   ]
 }
