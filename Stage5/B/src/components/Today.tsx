@@ -1,27 +1,32 @@
 import React, { memo, useContext } from "react";
 import Card from "../base_components/Card";
 import Heading from "../base_components/Heading";
-import { MEALS, WEEKDAYS } from "../constants/Constants";
-import PropTypes from "prop-types";
+import { MEALS } from "../constants/Constants";
 import img_diet from "../resources/images/diet.jpg";
 import AppContext from "../context/Context";
+import { TodayCardData } from "../constants/genericTypes";
 
-const Today = memo(function Today({ schedule }) {
+interface TodayProps {
+  schedule: {
+    [k: string]: string[];
+  };
+}
+const Today = memo(function Today({ schedule }: TodayProps) {
   const meals = MEALS;
 
   const schedule1 = { ...schedule };
   // Updating data to add Have ..... in meal ( breakfast ... .)
-  const data = meals.map((m) => [
+  const data: TodayCardData = meals.map((m: string) => [
     "Have",
     schedule1[m].join(", "),
     `in ${m[0].toUpperCase() + m.substring(1)}`,
-  ]);
+  ]) as TodayCardData;
 
   return (
     <div id="today-schedule">
       <Heading
-        type="2"
-        className="today-schedule__major-heading"
+        htype={2}
+        childClass={"today-schedule__major-heading"}
         value="Today's Diet Plan"
       />
       <hr className="major__hr"></hr>
@@ -42,24 +47,10 @@ const Today = memo(function Today({ schedule }) {
 }); //Rerender the day only if any update has happened and any update is there for the current day
 // schedule props(reference i.e. only shallow compare required)  will be updated if any update has occured for a day
 
-function validateScheduleProp() {
-  let obj = {};
-  MEALS.forEach((meal) => {
-    obj[meal] = PropTypes.arrayOf(PropTypes.string); // for every meal there must be an array for strings
-  });
-  return obj;
-}
-Today.propTypes = {
-  schedule: PropTypes.shape(validateScheduleProp()).isRequired,
-};
-
-const TodayWithContext = function TodayWithContext({ day }) {
+const TodayWithContext = function TodayWithContext({ day }: { day: string }) {
   const context = useContext(AppContext);
-  return <Today schedule={context.data[day]} />;
-};
-
-TodayWithContext.propTypes = {
-  day: PropTypes.oneOf(WEEKDAYS).isRequired,
+  if (context) return <Today schedule={context.data[day]} />;
+  else return <></>;
 };
 
 export default TodayWithContext;

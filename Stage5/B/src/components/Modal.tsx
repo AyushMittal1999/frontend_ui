@@ -1,12 +1,25 @@
-import React, { useReducer, useContext, useRef, memo } from "react";
+import React, { useContext, useRef, memo } from "react";
 import Heading from "../base_components/Heading";
 import { MEALS, WEEKDAYS } from "../constants/Constants";
 import { updateMealAtLocal } from "../objectmodel/LocalStorage";
 
 import AppContext from "../context/Context";
+import { ContextInterface } from "../context/ContextHook";
+
+interface ModalProps {
+  displayModalHandler(show: boolean): void;
+  updateData(day: string, meal: string, items: string[]): boolean;
+}
+
+interface ModalStateType {
+  day: string;
+  meal: string;
+  foodItems: string;
+  parsedFoodItems: string[];
+}
 
 // init to initialse reducer state
-function init() {
+function init(): ModalStateType {
   return {
     // Day Selected by user
     day: "monday",
@@ -19,8 +32,22 @@ function init() {
   };
 }
 
+type ReducerMethods =
+  | {
+      type: "SET_DAY" | "SET_MEAL" | "SET_FOOD_ITEMS";
+      payload: string;
+    }
+  | {
+      type: "SET_PARSED_FOOD_ITEMS";
+      payload: string[];
+    }
+  | { type: "RESET" };
+
 // Reducer to skip use of multiple useStates
-function reducer(state, action) {
+function reducer(
+  state: ModalStateType,
+  action: ReducerMethods
+): ModalStateType {
   switch (action.type) {
     case "SET_DAY":
       return { ...state, day: action.payload };
@@ -38,17 +65,17 @@ function reducer(state, action) {
 }
 
 const Modal = memo(
-  function Modal({ displayModalHandler, updateData }) {
+  function Modal({ displayModalHandler, updateData }: ModalProps) {
     const meals = MEALS;
     const weekdays = WEEKDAYS;
     // State for handling modal field
-    const [state, dispatch] = useReducer(reducer, null, init);
+    const [state, dispatch] = React.useReducer(reducer, null, init);
     // Using Reference to store dom reference of parsed item view and scroll to last for userview
-    const dom_ref_ul = useRef();
+    const dom_ref_ul = useRef<HTMLUListElement>(null);
 
     // On item change update parsed item list
-    function onChangeHandler(event) {
-      let items = event.target.value
+    function onChangeHandler(event: React.FormEvent<HTMLInputElement>) {
+      let items = event.currentTarget.value
         .split(";")
         .filter((x) => x.trim().length >= 1)
         .map(function (x) {
@@ -72,7 +99,7 @@ const Modal = memo(
       //Update Parsed items
       dispatch({ type: "SET_PARSED_FOOD_ITEMS", payload: items });
       // Input to be same as user entered
-      dispatch({ type: "SET_FOOD_ITEMS", payload: event.target.value });
+      dispatch({ type: "SET_FOOD_ITEMS", payload: event.currentTarget.value });
 
       //  Scroll to bottom
       if (dom_ref_ul.current) {
@@ -108,9 +135,9 @@ const Modal = memo(
           </button>
 
           <Heading
-            type="3"
+            htype={3}
             value="Edit Schedule"
-            className="main-heading"
+            childClass="main-heading"
           ></Heading>
 
           {/* Form for user input */}
@@ -192,84 +219,62 @@ const Modal = memo(
       </div>
     );
   },
-  () => false
-); // Dont rerender any of props change because state depend only on internal hooks
+  () => true
+); // No re rendering required on any of parent state change
 
-// Rerender Modal due to parent state only if visiblity is updated
+let prevTimeout: NodeJS.Timeout | null = null;
+function getUpdateDataFunction(context: ContextInterface) {
+  return function (day: string, meal: string, foodItems: string[]) {
+    if (updateMealAtLocal(day, meal, foodItems)) {
+      // Update data at context
+      context.updateData(day, meal, foodItems);
+      // Hide Modal
+      context.updateModal(false);
+      //Check for existing status visiblity
+      if (prevTimeout) {
+        clearTimeout(prevTimeout);
+      }
+      // Show Success
+      context.updateStatus(1);
+      //Hide Status
 
-Modal.propTypes = {
-  displayModalHandler: function (props, propName, componentName) {
-    const fn = props[propName];
-    if (
-      !fn ||
-      !fn.prototype ||
-      typeof fn.prototype.constructor !== "function" ||
-      fn.prototype.constructor.length !== 1
-    ) {
-      return new Error(
-        propName + "must be a function with 1 args in " + componentName
-      );
+      prevTimeout = setTimeout(() => {
+        context.updateStatus(-1);
+      }, 2000);
+
+      // return true to indicate success update
+      return true;
+    } else {
+      // Hide Modal
+      context.updateModal(false);
+      //Check for existing status visiblity
+      if (prevTimeout) {
+        clearTimeout(prevTimeout);
+      }
+      // Show Fali
+      context.updateStatus(0, "local storage not accessible");
+      //Hide Status
+      prevTimeout = setTimeout(() => {
+        context.updateStatus(-1);
+      }, 2000);
+      // retunr false to indicate Fail
+      return false;
     }
-  },
-  updateData: function (props, propName, componentName) {
-    const fn = props[propName];
-    if (
-      !fn ||
-      !fn.prototype ||
-      typeof fn.prototype.constructor !== "function" ||
-      fn.prototype.constructor.length !== 3
-    ) {
-      return new Error(
-        propName + "must be a function with 3 args in " + componentName
-      );
-    }
-  },
-};
+  };
+}
+
 const ModalWithContext = () => {
   const context = useContext(AppContext);
-  const prevTimeout = useRef(null);
 
-  return (
-    <Modal
-      displayModalHandler={context.updateModal}
-      // Update function to update local storage then update context data
-      updateData={function (day, meal, foodItems) {
-        if (updateMealAtLocal(day, meal, foodItems)) {
-          // Update data at context
-          context.updateData(day, meal, foodItems);
-          // Hide Modal
-          context.updateModal(false);
-          //Check for existing status visiblity
-          if (prevTimeout.current) {
-            clearTimeout(prevTimeout.current);
-          }
-          // Show Success
-          context.updateStatus(1);
-          //Hide Status
-          prevTimeout.current = setTimeout(() => {
-            context.updateStatus(-1);
-          }, 2000);
-
-          // return 1 to indicate success update
-          return 1;
-        } else {
-          // Hide Modal
-          context.updateModal(false);
-          //Check for existing status visiblity
-          if (prevTimeout.current) {
-            clearTimeout(prevTimeout.current);
-          }
-          // Show Fali
-          context.updateStatus(0, "local storage not accessible");
-          //Hide Status
-          prevTimeout.current = setTimeout(() => {
-            context.updateStatus(-1);
-          }, 2000);
-          return 0;
-        }
-      }}
-    />
-  );
+  if (context)
+    return (
+      <Modal
+        displayModalHandler={context.updateModal}
+        // Update function to update local storage then update context data
+        updateData={getUpdateDataFunction(context)}
+      />
+    );
+  else return <></>;
 };
 
 export default ModalWithContext;

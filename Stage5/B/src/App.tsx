@@ -6,18 +6,25 @@ import Today from "./components/Today";
 import Status from "./base_components/Status";
 import WeekScheduleHeading from "./base_components/WeekScheduleHeading";
 import { WEEKDAYS } from "./constants/Constants";
+import { StatusVisiblity } from "./constants/genericTypes";
 import AppContext from "./context/Context";
+
+interface AppProps {
+  statusVisiblity: StatusVisiblity;
+  statusMessage: string;
+  modalVisiblity: boolean;
+}
 
 const App = memo(function App({
   statusVisiblity,
   statusMessage,
   modalVisiblity,
-}) {
+}: AppProps) {
   let weekdays = WEEKDAYS;
   const todayDay = weekdays[(new Date().getDay() - 1 + 7) % 7];
   return (
     <React.Fragment>
-      <Heading type={1} id="main-heading" value="Diet Plan" />
+      <Heading htype={1} id="main-heading" value="Diet Plan" />
 
       {modalVisiblity ? <Modal /> : <></>}
 
@@ -42,7 +49,7 @@ const App = memo(function App({
   );
 }); // memo with default shallow comparator
 
-const AppWithContext = () => {
+const AppWithContext = (): JSX.Element => {
   const context = useContext(AppContext);
   if (context)
     return (

@@ -1,14 +1,16 @@
 import React, { memo, useContext } from "react";
 import AppContext from "../context/Context";
 
-console.log("week Sch heading");
+interface InputProps {
+  displayModalHandler(show: boolean): void;
+}
 const WeekScheduleHeading = memo(
-  function WeekScheduleHeading({ displayModalHandler, ...rest }) {
+  function WeekScheduleHeading({ displayModalHandler }: InputProps) {
     const handleClick = () => {
       displayModalHandler(true);
     };
     return (
-      <div id="schedule-heading" {...rest}>
+      <div id="schedule-heading">
         <div className="schedule-heading__elem1">
           <h2 className=" h__inline schedule-heading__major-heading">
             Weekly Schedule
@@ -26,5 +28,7 @@ const WeekScheduleHeading = memo(
 
 export default function WeekScheduleHeadingWithContext() {
   const context = useContext(AppContext);
-  return <WeekScheduleHeading displayModalHandler={context.updateModal} />;
+  if (context)
+    return <WeekScheduleHeading displayModalHandler={context.updateModal} />;
+  else return <></>;
 }
