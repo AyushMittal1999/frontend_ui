@@ -176,6 +176,10 @@
     /* overflow: scroll; */
     /* height: 100px; */
   }
+  .modal__heading {
+    margin: 0px;
+    padding-top: 5px;
+  }
 
   .modal__ul {
     max-height: 150px;

@@ -5,6 +5,7 @@ import { updateMealAtLocal } from "../objectmodel/LocalStorage";
 
 import AppContext from "../context/Context";
 import { ContextInterface } from "../context/ContextHook";
+import { ValidDaysType, ValidMealType } from "../constants/genericTypes";
 
 interface ModalProps {
   displayModalHandler(show: boolean): void;
@@ -137,7 +138,7 @@ const Modal = memo(
           <Heading
             htype={3}
             value="Edit Schedule"
-            childClass="main-heading"
+            childClass="modal__heading"
           ></Heading>
 
           {/* Form for user input */}
@@ -224,7 +225,11 @@ const Modal = memo(
 
 let prevTimeout: NodeJS.Timeout | null = null;
 function getUpdateDataFunction(context: ContextInterface) {
-  return function (day: string, meal: string, foodItems: string[]) {
+  return function (
+    day: ValidDaysType,
+    meal: ValidMealType,
+    foodItems: string[]
+  ): boolean {
     if (updateMealAtLocal(day, meal, foodItems)) {
       // Update data at context
       context.updateData(day, meal, foodItems);

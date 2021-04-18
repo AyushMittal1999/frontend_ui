@@ -4,7 +4,7 @@ import Heading from "../base_components/Heading";
 import { MEALS } from "../constants/Constants";
 import img_diet from "../resources/images/diet.jpg";
 import AppContext from "../context/Context";
-import { TodayCardData } from "../constants/genericTypes";
+import { TodayCardData, ValidDaysType } from "../constants/genericTypes";
 
 interface TodayProps {
   schedule: {
@@ -47,7 +47,11 @@ const Today = memo(function Today({ schedule }: TodayProps) {
 }); //Rerender the day only if any update has happened and any update is there for the current day
 // schedule props(reference i.e. only shallow compare required)  will be updated if any update has occured for a day
 
-const TodayWithContext = function TodayWithContext({ day }: { day: string }) {
+const TodayWithContext = function TodayWithContext({
+  day,
+}: {
+  day: ValidDaysType;
+}) {
   const context = useContext(AppContext);
   if (context) return <Today schedule={context.data[day]} />;
   else return <></>;

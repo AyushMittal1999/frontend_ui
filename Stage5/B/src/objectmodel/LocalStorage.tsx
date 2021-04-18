@@ -1,6 +1,7 @@
 import { ModelThis, scheduleDataType } from "./Model";
 import { DATA_KEY, WEEKDAYS } from "../constants/Constants";
 import Model from "./Model";
+import { ValidDaysType, ValidMealType } from "../constants/genericTypes";
 
 let defaultarr = [];
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -36,8 +37,8 @@ export const getLocalData = (): scheduleDataType => {
 };
 
 export const updateMealAtLocal = (
-  day: string,
-  meal: string,
+  day: ValidDaysType,
+  meal: ValidMealType,
   foodItems: string[]
 ): boolean => {
   if (model.updateMeal(day, meal, foodItems)) {

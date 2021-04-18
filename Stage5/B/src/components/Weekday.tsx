@@ -7,6 +7,7 @@ import img_snacks from "../resources/images/snacks.jpg";
 import img_lunch from "../resources/images/lunch.jpg";
 import img_dinner from "../resources/images/dinner.jpg";
 import AppContext from "../context/Context";
+import { ValidDaysType } from "../constants/genericTypes";
 
 const images = [img_breakfast, img_lunch, img_snacks, img_dinner];
 
@@ -73,7 +74,7 @@ const Weekday = memo(function Weekday({ day, schedule }: WeekdayProps) {
 const WeekdayWithContext = function WeekdayWithContext({
   day,
 }: {
-  day: string;
+  day: ValidDaysType;
 }) {
   const context = useContext(AppContext);
   if (context) return <Weekday day={day} schedule={context.data[day]} />;

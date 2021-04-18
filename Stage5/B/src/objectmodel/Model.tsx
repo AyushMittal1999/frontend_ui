@@ -3,12 +3,18 @@
 */
 
 import { MEALS, WEEKDAYS } from "../constants/Constants";
-
-export type scheduleDataType = { [k: string]: { [k: string]: string[] } };
+import {
+  GenericObject,
+  ValidDaysType,
+  ValidMealType,
+} from "../constants/genericTypes";
+export type scheduleDataType = {
+  [k in ValidDaysType]: { [k in ValidMealType]: string[] };
+};
 
 export interface ModelThis {
   schedule: scheduleDataType;
-  updateMeal(day: string, meal: string, items: string[]): boolean;
+  updateMeal(day: ValidDaysType, meal: ValidMealType, items: string[]): boolean;
   getCompressedData(): string[][][];
 }
 
@@ -20,7 +26,7 @@ const Model: ModelInterface = (function Model(
   this: ModelThis,
   schedule_data: string[][][]
 ) {
-  let data: scheduleDataType = {};
+  let data: GenericObject = {};
 
   for (let i = 0; i < WEEKDAYS.length; i++) {
     data[WEEKDAYS[i]] = {};
@@ -31,7 +37,7 @@ const Model: ModelInterface = (function Model(
 
   let compressedData = schedule_data;
 
-  this.schedule = data;
+  this.schedule = data as scheduleDataType;
 
   this.updateMeal = function (day, meal, items) {
     // Validate Data and update

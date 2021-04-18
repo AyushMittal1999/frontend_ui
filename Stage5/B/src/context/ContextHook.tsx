@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { MEALS, WEEKDAYS } from "../constants/Constants";
+import { ValidDaysType, ValidMealType } from "../constants/genericTypes";
 import { getLocalData } from "../objectmodel/LocalStorage";
 import { scheduleDataType } from "../objectmodel/Model";
 
@@ -11,7 +12,7 @@ export interface ContextInterface {
   readonly data: scheduleDataType;
   readonly status: ContextStatusInterface;
   readonly modalVisiblity: boolean;
-  updateData(day: string, meal: string, items: string[]): void;
+  updateData(day: ValidDaysType, meal: ValidMealType, items: string[]): void;
   updateStatus(visiblity: 1 | 0 | -1, message?: string): void;
   updateModal(show: boolean): void;
 }

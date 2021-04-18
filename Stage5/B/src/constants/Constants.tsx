@@ -10,8 +10,8 @@ export const WEEKDAYS = [
   "friday",
   "saturday",
   "sunday",
-];
-export const MEALS = ["breakfast", "lunch", "snacks", "dinner"];
+] as const;
+export const MEALS = ["breakfast", "lunch", "snacks", "dinner"] as const;
 
 export const DATA_KEY = "dietData";
 
