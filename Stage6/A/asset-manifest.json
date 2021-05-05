@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/frontend_ui/Stage6/A/static/css/main.edfafd3b.chunk.css",
-    "main.js": "/frontend_ui/Stage6/A/static/js/main.49477d69.chunk.js",
+    "main.js": "/frontend_ui/Stage6/A/static/js/main.0b7ec645.chunk.js",
     "runtime-main.js": "/frontend_ui/Stage6/A/static/js/runtime-main.6a1ecf12.js",
-    "static/js/2.6ce1a50d.chunk.js": "/frontend_ui/Stage6/A/static/js/2.6ce1a50d.chunk.js",
+    "static/js/2.1cfd4660.chunk.js": "/frontend_ui/Stage6/A/static/js/2.1cfd4660.chunk.js",
     "index.html": "/frontend_ui/Stage6/A/index.html",
-    "static/js/2.6ce1a50d.chunk.js.LICENSE.txt": "/frontend_ui/Stage6/A/static/js/2.6ce1a50d.chunk.js.LICENSE.txt",
+    "static/js/2.1cfd4660.chunk.js.LICENSE.txt": "/frontend_ui/Stage6/A/static/js/2.1cfd4660.chunk.js.LICENSE.txt",
     "static/media/a.3052d43c.jpg": "/frontend_ui/Stage6/A/static/media/a.3052d43c.jpg",
     "static/media/dinner1.56b92040.jpg": "/frontend_ui/Stage6/A/static/media/dinner1.56b92040.jpg",
     "static/media/empty1.f5c7794e.svg": "/frontend_ui/Stage6/A/static/media/empty1.f5c7794e.svg",
@@ -14,8 +14,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6a1ecf12.js",
-    "static/js/2.6ce1a50d.chunk.js",
+    "static/js/2.1cfd4660.chunk.js",
     "static/css/main.edfafd3b.chunk.css",
-    "static/js/main.49477d69.chunk.js"
+    "static/js/main.0b7ec645.chunk.js"
   ]
 }
