@@ -1,16 +1,16 @@
 {
   "files": {
-    "static/js/0.6bd688ac.chunk.js": "/frontend_ui/Stage6/A/static/js/0.6bd688ac.chunk.js",
+    "static/js/0.07de4015.chunk.js": "/frontend_ui/Stage6/A/static/js/0.07de4015.chunk.js",
     "main.css": "/frontend_ui/Stage6/A/static/css/main.4186709d.chunk.css",
-    "main.js": "/frontend_ui/Stage6/A/static/js/main.02756917.chunk.js",
-    "runtime-main.js": "/frontend_ui/Stage6/A/static/js/runtime-main.66ac8ede.js",
-    "static/js/3.9e3a2ef6.chunk.js": "/frontend_ui/Stage6/A/static/js/3.9e3a2ef6.chunk.js",
-    "static/js/4.d7f2fb54.chunk.js": "/frontend_ui/Stage6/A/static/js/4.d7f2fb54.chunk.js",
-    "static/js/5.cf46423b.chunk.js": "/frontend_ui/Stage6/A/static/js/5.cf46423b.chunk.js",
-    "static/js/6.2abcddaf.chunk.js": "/frontend_ui/Stage6/A/static/js/6.2abcddaf.chunk.js",
-    "static/js/7.1b1412f4.chunk.js": "/frontend_ui/Stage6/A/static/js/7.1b1412f4.chunk.js",
+    "main.js": "/frontend_ui/Stage6/A/static/js/main.5f5ba094.chunk.js",
+    "runtime-main.js": "/frontend_ui/Stage6/A/static/js/runtime-main.b5087906.js",
+    "static/js/3.ba46e855.chunk.js": "/frontend_ui/Stage6/A/static/js/3.ba46e855.chunk.js",
+    "static/js/4.bd54cf16.chunk.js": "/frontend_ui/Stage6/A/static/js/4.bd54cf16.chunk.js",
+    "static/js/5.4222b34a.chunk.js": "/frontend_ui/Stage6/A/static/js/5.4222b34a.chunk.js",
+    "static/js/6.1c16343f.chunk.js": "/frontend_ui/Stage6/A/static/js/6.1c16343f.chunk.js",
+    "static/js/7.9996f750.chunk.js": "/frontend_ui/Stage6/A/static/js/7.9996f750.chunk.js",
     "index.html": "/frontend_ui/Stage6/A/index.html",
-    "static/js/3.9e3a2ef6.chunk.js.LICENSE.txt": "/frontend_ui/Stage6/A/static/js/3.9e3a2ef6.chunk.js.LICENSE.txt",
+    "static/js/3.ba46e855.chunk.js.LICENSE.txt": "/frontend_ui/Stage6/A/static/js/3.ba46e855.chunk.js.LICENSE.txt",
     "static/media/breakfast.3052d43c.jpg": "/frontend_ui/Stage6/A/static/media/breakfast.3052d43c.jpg",
     "static/media/dinner.56b92040.jpg": "/frontend_ui/Stage6/A/static/media/dinner.56b92040.jpg",
     "static/media/empty.027e5f3f.svg": "/frontend_ui/Stage6/A/static/media/empty.027e5f3f.svg",
@@ -18,9 +18,9 @@
     "static/media/snacks.b9592683.jpg": "/frontend_ui/Stage6/A/static/media/snacks.b9592683.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.66ac8ede.js",
-    "static/js/3.9e3a2ef6.chunk.js",
+    "static/js/runtime-main.b5087906.js",
+    "static/js/3.ba46e855.chunk.js",
     "static/css/main.4186709d.chunk.css",
-    "static/js/main.02756917.chunk.js"
+    "static/js/main.5f5ba094.chunk.js"
   ]
 }
