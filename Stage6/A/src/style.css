@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+  /* background-color: red; */
+  /* padding: 20px; */
+}
+
+*::-webkit-scrollbar-thumb {
+  /* display: none; */
+  /* width :0px; */
+  width: 5px;
+  border-radius: 27px;
+  background-color: black;
+}
+.MuiTabs-flexContainer::after {
+  content: "";
+  min-width: 0.1px;
+  height: 0.1px;
+}
+
+body {
+  margin: 0px;
+  background: #e7f2fc36;
+}
+
+html {
+  min-width: 280px;
+}
