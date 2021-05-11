@@ -99,6 +99,9 @@ const EditableTypoGraphyStyled = memo(
         fontStyle: "italic",
         fontFamily: "Courier New,Courier,monospace",
         content: `"Click to Edit"`,
+        [theme.breakpoints.down("xs")]: {
+          fontSize: "13px",
+        },
       },
     },
   }))(EditableTypoGraphy)

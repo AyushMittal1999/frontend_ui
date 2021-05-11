@@ -26,12 +26,26 @@ const StyledChip = React.lazy(() => {
         },
       },
     }))(module.default);
-    // await new Promise((resolve) => {
-    //   setTimeout(resolve, 50000);
-    // });
+
     return { default: StyledChip };
   });
   return newModule;
 });
 
-export { StyledChip, Chip };
+const StyledChipDayCard = React.lazy(() => {
+  const m = import("@material-ui/core/Chip");
+  const newModule = m.then(async function (module) {
+    const StyledChip = withStyles((theme) => ({
+      root: {
+        borderColor: "green",
+        color: "green",
+        marginLeft: "5px",
+      },
+    }))(module.default);
+
+    return { default: StyledChip };
+  });
+  return newModule;
+});
+
+export { StyledChip, Chip, StyledChipDayCard };

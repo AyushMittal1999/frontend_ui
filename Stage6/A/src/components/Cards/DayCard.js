@@ -20,7 +20,7 @@ import {
   SnacksIcon,
   DinnerIcon,
 } from "../../helper/LazyIcons";
-import { StyledChip } from "../../helper/Chip/LazyChip";
+import { StyledChipDayCard as StyledChip } from "../../helper/Chip/LazyChip";
 import PropTypes from "prop-types";
 
 const background = [
@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     flex: 1,
     flexDirection: "row",
     height: "414px",
-    minWidth: "min(400px , 87% )",
+    minWidth: "min(400px , 91% )",
     margin: "20px",
     // marginLeft: "0px",
     borderRadius: "30px 30px 30px 30px",
