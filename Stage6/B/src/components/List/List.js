@@ -17,7 +17,7 @@ const useTodayCardStyles = makeStyles((theme) => ({
     overflowY: "auto",
     width: "100% ",
     "&:empty": {
-      height: "65%",
+      height: "68%",
       margin: `0px auto`,
       display: "block",
       backgroundSize: "79px",
