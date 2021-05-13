@@ -68,9 +68,9 @@ const App = memo(function App({ pending, refreshLocal }) {
         position="sticky"
         className="bg-brand text-gray-900 px-1 py-0 justify-center"
       >
-        <Toolbar>
+        <Toolbar className="p-2">
           <TitleIcon fontSize="large" className={`${classes.mainIcon} m-1`} />
-          <Typography className="flex-1 p-2 pl-1 font-semibold" variant="h4">
+          <Typography className="flex-1 p-4 pl-1 font-semibold" variant="h4">
             Diet Plan !!
           </Typography>
 
@@ -104,7 +104,7 @@ const App = memo(function App({ pending, refreshLocal }) {
       {/* // Wrapper to Wrap Non Appbar coponents */}
       <div className="m-2 mt-0">
         <div className="flex lg:flex-col max-w-full">
-          <div className="w-min min-w-0 lg:w-full">
+          <div className="w-min min-w-0 lg:w-full px-7 xl:p-0">
             <Widgets />
           </div>
           <div className="flex-1 min-w-0 m-auto max-w-full">
@@ -112,7 +112,7 @@ const App = memo(function App({ pending, refreshLocal }) {
           </div>
         </div>
 
-        <Typography className="mt-10" align="center" gutterBottom variant="h3">
+        <Typography className="mt-6" align="center" gutterBottom variant="h3">
           Weekly Schedule
         </Typography>
         {WEEKDAYS.map((w) => {

@@ -23,7 +23,7 @@ import CaloriesContext from "../context/caloriescontext/CaloriesContext";
 function TimeValue() {
   const [time, setTime] = useState(() => {
     const now = Date.now();
-    return new Date(now).toLocaleTimeString();
+    return new Date(now).toLocaleTimeString("en-US");
   });
 
   const interval = useRef(null);
@@ -33,7 +33,7 @@ function TimeValue() {
       () =>
         setTime(() => {
           const now = Date.now();
-          return new Date(now).toLocaleTimeString();
+          return new Date(now).toLocaleTimeString("en-US");
         }),
       1000
     );
@@ -135,7 +135,7 @@ function WeekCalorieValue() {
 
 function CommonWidget({ title, comp, IconComp, detailComp, colorClass }) {
   return (
-    <Paper elevation={5} className=" w-80 xl:w-72 m-2 mt-11  max-w-full">
+    <Paper elevation={5} className="w-88 xl:w-72 m-2 mt-11 max-w-full">
       <div className="flex justify-between">
         <div
           elevation={4}
@@ -145,7 +145,7 @@ function CommonWidget({ title, comp, IconComp, detailComp, colorClass }) {
         </div>
 
         <div className="mt-3 mr-3">
-          <Typography variant="body1" className="text-gray-500 text-right">
+          <Typography variant="h6" className="text-gray-500 text-right">
             {title}
           </Typography>
           <Typography variant="h5" className="text-right mr-0">
@@ -169,9 +169,9 @@ function CustomInput({ val, onChange }) {
         type: "number",
         min: 0,
         max: 9999,
-        className: "p-0 pr-1 text-right w-24",
+        className: "p-0 pr-2 text-right w-24",
       }}
-      value={val}
+      value={val.toString()}
       onChange={(e) => {
         if (!isNaN(e.target.value) && +e.target.value <= 9999) {
           onChange(e);
@@ -197,7 +197,7 @@ function DayCaloriesWidget() {
 
   const DetailComp = (
     <div className="flex justify-between">
-      <Typography variant="body2" className="text-gray-500 ml-2 p-2">
+      <Typography variant="body1" className="text-gray-500 ml-2 p-2">
         Today Workout (0-9999)
       </Typography>
 
@@ -215,13 +215,18 @@ function DayCaloriesWidget() {
           </IconButton>
         </Tooltip>
       ) : (
-        <Tooltip title="Saved">
+        <Tooltip
+          title={
+            <div className="text-center">
+              Updated!! <br /> Click On Value To Edit
+            </div>
+          }
+        >
           <SaveAlt fontSize="large" className="p-1 m-auto mr-2 text-gray-300" />
         </Tooltip>
       )}
     </div>
   );
-
   return (
     <CommonWidget
       title="Workout"
@@ -229,7 +234,9 @@ function DayCaloriesWidget() {
         <CustomInput
           val={val}
           onChange={(e) => {
-            if (validate(val)) setVal(+e.target.value);
+            if (validate(e.target.value)) {
+              setVal(+e.target.value);
+            }
           }}
         />
       }
@@ -251,7 +258,7 @@ function CaloriesWidgets() {
         comp={<WeekCalorieValue />}
         IconComp={FitnessCenter}
         detailComp={
-          <Typography variant="body2" className="text-gray-500 ml-2 p-2">
+          <Typography variant="body1" className="text-gray-500 ml-2 p-2">
             Last Seven Days Average
           </Typography>
         }
@@ -262,7 +269,7 @@ function CaloriesWidgets() {
 }
 
 const Widgets = memo(function Widgets() {
-  let showTime = useMediaQuery("(min-width:1023px)");
+  let showTime = useMediaQuery("(min-width:1024px)");
   showTime |= !useMediaQuery("(min-width:928px)");
   const showDay = useMediaQuery("(min-width:624px)");
   return (
@@ -273,7 +280,7 @@ const Widgets = memo(function Widgets() {
           comp={<DayValue />}
           IconComp={CalendarToday}
           detailComp={
-            <Typography variant="body2" className="text-gray-500 ml-2 p-2">
+            <Typography variant="body1" className="text-gray-500 ml-2 p-2">
               <DateValue />
             </Typography>
           }
@@ -289,7 +296,7 @@ const Widgets = memo(function Widgets() {
           comp={<TimeValue />}
           IconComp={AccessTime}
           detailComp={
-            <Typography variant="body2" className="text-gray-500 ml-2 p-2">
+            <Typography variant="body1" className="text-gray-500 ml-2 p-2">
               <DateValue />
             </Typography>
           }
