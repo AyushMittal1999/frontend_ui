@@ -36,7 +36,7 @@ const TodayCard = memo(function TodayCard({ day, index, visible }) {
       <Card
         raised
         elevation={12}
-        className="flex flex-row h-80 w-10/12 rounded-4xl xs:w-95/100 sm:flex-col sm:h-113"
+        className="flex flex-row h-80 w-10/12 rounded-4xl xs:w-97/100 sm:flex-col sm:h-113"
       >
         {/* Custom ImageWrapper to add Effect on Image loading */}
         <ImageWrapper title={MEALS[index].toUpperCase()} src={images[index]} />
