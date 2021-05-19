@@ -144,7 +144,7 @@ App.propTypes = {
 // App component With context to prevent unncessary render on context change
 const AppWithContext = memo(function AppWithContext() {
   const context = useContext(AppContext);
-  if (context && context.pendingUpdates && context.refreshlocalStorage)
+  if (context?.pendingUpdates && context?.refreshlocalStorage)
     return (
       <App
         refreshLocal={context.refreshlocalStorage}

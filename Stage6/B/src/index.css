@@ -48,4 +48,43 @@ button {
     @apply h-8 inline-flex flex-wrap flex-row
       overflow-hidden;
   }
+
+  .today-list {
+    height: min(230px, 76%);
+    @apply w-full overflow-y-auto;
+  }
+  .today-list:empty,
+  .weekday-list:empty {
+    height: 68%;
+    background-size: 79px;
+    background-image: url("./resources/images/empty.svg");
+    background-position-x: 40px;
+    background-position-y: 20px;
+    @apply bg-no-repeat block mx-0 my-auto;
+  }
+  .today-list:empty::after,
+  .weekday-list:empty::after {
+    content: "No items";
+    font-style: italic;
+    position: absolute;
+    font-size: 24px;
+    text-align: center;
+    top: calc(101px + 11%);
+    left: 33px;
+  }
+  .weekday-list {
+    height: 48%;
+    overflow-y: auto;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  .weekday-list:empty {
+    height: 180px;
+  }
+  .weekday-list:empty::after {
+    top: auto;
+    bottom: 28px;
+    left: 30px;
+  }
 }

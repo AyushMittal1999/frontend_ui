@@ -116,13 +116,8 @@ const EditableTypoGraphyWithContext = function EditableTypoGraphyWithContext({
   const listInd = getIndexFromID(day, meal, listIndHash);
   // If props are valid render the child else skip
   if (
-    context &&
-    context &&
-    context.updateDataOneRow &&
-    context.data &&
-    context.data[day] &&
-    context.data[day][meal] &&
-    context.data[day][meal] &&
+    context?.updateDataOneRow &&
+    context?.data?.[day]?.[meal] &&
     listInd >= 0 &&
     listInd < context.data[day][meal].length
   ) {

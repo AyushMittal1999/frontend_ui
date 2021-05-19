@@ -120,7 +120,7 @@ function DateValue() {
 function WeekCalorieValue() {
   const context = useContext(CaloriesContext);
 
-  if (context && !isNaN(context.weeklyCalorie)) {
+  if (!isNaN(context?.weeklyCalorie)) {
     return (
       <>
         {parseFloat(context.weeklyCalorie).toFixed(2)}

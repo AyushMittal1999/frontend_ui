@@ -47,7 +47,7 @@ const CustomListItemDeleteButtonContext =
     const context = useContext(AppContext);
 
     // If props are valid render the child else skip
-    if (context && context.updateDataDeleteRow) {
+    if (context?.updateDataDeleteRow) {
       return (
         <CustomListItemDeleteButton
           listIndHash={listIndHash}
