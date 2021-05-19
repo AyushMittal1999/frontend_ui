@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/frontend_ui/Stage6/B/static/css/main.9136bf1c.chunk.css",
-    "main.js": "/frontend_ui/Stage6/B/static/js/main.dcea792f.chunk.js",
-    "runtime-main.js": "/frontend_ui/Stage6/B/static/js/runtime-main.9769e16d.js",
-    "static/js/2.273c7922.chunk.js": "/frontend_ui/Stage6/B/static/js/2.273c7922.chunk.js",
-    "static/js/3.5e8377e2.chunk.js": "/frontend_ui/Stage6/B/static/js/3.5e8377e2.chunk.js",
-    "static/js/4.9c52b780.chunk.js": "/frontend_ui/Stage6/B/static/js/4.9c52b780.chunk.js",
-    "static/js/5.5598cc0c.chunk.js": "/frontend_ui/Stage6/B/static/js/5.5598cc0c.chunk.js",
-    "static/js/6.7f7f8ef1.chunk.js": "/frontend_ui/Stage6/B/static/js/6.7f7f8ef1.chunk.js",
-    "static/js/7.69171fb6.chunk.js": "/frontend_ui/Stage6/B/static/js/7.69171fb6.chunk.js",
+    "main.css": "/frontend_ui/Stage6/B/static/css/main.4fe0ea52.chunk.css",
+    "main.js": "/frontend_ui/Stage6/B/static/js/main.2785ed80.chunk.js",
+    "runtime-main.js": "/frontend_ui/Stage6/B/static/js/runtime-main.a525b90e.js",
+    "static/js/2.e29d29f7.chunk.js": "/frontend_ui/Stage6/B/static/js/2.e29d29f7.chunk.js",
+    "static/js/3.1c75db14.chunk.js": "/frontend_ui/Stage6/B/static/js/3.1c75db14.chunk.js",
+    "static/js/4.9af6e65f.chunk.js": "/frontend_ui/Stage6/B/static/js/4.9af6e65f.chunk.js",
+    "static/js/5.1e10eee8.chunk.js": "/frontend_ui/Stage6/B/static/js/5.1e10eee8.chunk.js",
+    "static/js/6.76c7d2cb.chunk.js": "/frontend_ui/Stage6/B/static/js/6.76c7d2cb.chunk.js",
+    "static/js/7.0e5e387c.chunk.js": "/frontend_ui/Stage6/B/static/js/7.0e5e387c.chunk.js",
     "index.html": "/frontend_ui/Stage6/B/index.html",
-    "static/js/2.273c7922.chunk.js.LICENSE.txt": "/frontend_ui/Stage6/B/static/js/2.273c7922.chunk.js.LICENSE.txt",
+    "static/js/2.e29d29f7.chunk.js.LICENSE.txt": "/frontend_ui/Stage6/B/static/js/2.e29d29f7.chunk.js.LICENSE.txt",
     "static/media/breakfast.3052d43c.jpg": "/frontend_ui/Stage6/B/static/media/breakfast.3052d43c.jpg",
     "static/media/dinner.56b92040.jpg": "/frontend_ui/Stage6/B/static/media/dinner.56b92040.jpg",
-    "static/media/empty.f5c7794e.svg": "/frontend_ui/Stage6/B/static/media/empty.f5c7794e.svg",
+    "static/media/index.css": "/frontend_ui/Stage6/B/static/media/empty.027e5f3f.svg",
     "static/media/lunch.82bc6dd3.jpg": "/frontend_ui/Stage6/B/static/media/lunch.82bc6dd3.jpg",
     "static/media/snacks.b9592683.jpg": "/frontend_ui/Stage6/B/static/media/snacks.b9592683.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9769e16d.js",
-    "static/js/2.273c7922.chunk.js",
-    "static/css/main.9136bf1c.chunk.css",
-    "static/js/main.dcea792f.chunk.js"
+    "static/js/runtime-main.a525b90e.js",
+    "static/js/2.e29d29f7.chunk.js",
+    "static/css/main.4fe0ea52.chunk.css",
+    "static/js/main.2785ed80.chunk.js"
   ]
 }
