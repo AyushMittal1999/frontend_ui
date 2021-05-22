@@ -35,7 +35,7 @@ const Weekday = memo(function Weekday({ day }) {
         }}
       >
         <AccordionSummary
-          className="bg-gradient-to-r from-brand to-brand-light dark:from-brand-dark dark:to-brand-dark"
+          className="bg-gradient-to-r p-1 xl:p-0 from-brand to-brand-light dark:from-brand-dark dark:to-brand-dark"
           expandIcon={<ExpandMoreIcon />}
         >
           <Typography className="ml-8" variant="h4">

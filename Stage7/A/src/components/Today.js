@@ -43,7 +43,7 @@ const tabsStyles = (theme) => ({
   root: {
     background:
       theme.palette.type === "dark"
-        ? "#5a5959"
+        ? "#484848"
         : "linear-gradient(#e9dd71, rgba(230, 239, 126, 0.86))",
   },
 });

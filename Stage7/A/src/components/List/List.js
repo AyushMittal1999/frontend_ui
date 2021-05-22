@@ -36,7 +36,13 @@ const CustomList = memo(function CustomList({
   const [dragStatus, setDragStatus] = useState({ from: -1, to: -1 });
 
   function swapData(from, to) {
-    if (from !== to && from < data.length && to < data.length) {
+    if (
+      from !== to &&
+      from >= 0 &&
+      to >= 0 &&
+      from < data.length &&
+      to < data.length
+    ) {
       const tempArr = [...data];
       const temp = tempArr[from];
       tempArr[from] = tempArr[to];
@@ -80,7 +86,7 @@ const CustomList = memo(function CustomList({
               if (!isNaN(e?.target?.dataset?.item)) {
                 const newFrom = Number(e?.target?.dataset?.item);
                 if (newFrom !== dragStatus.cur) {
-                  setDragStatus((lastVal) => ({ from: newFrom, to: newFrom }));
+                  setDragStatus((lastVal) => ({ from: newFrom, to: -1 }));
                 }
               }
             }}
