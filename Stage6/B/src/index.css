@@ -1,0 +1,90 @@
+/* ./src/index.css */
+
+.bg0 {
+  background-image: linear-gradient(to bottom, #ff5722, rgb(222 178 113 / 46%));
+}
+.bg1 {
+  background-image: linear-gradient(#8bc34a, rgb(164 215 166 / 40%));
+}
+.bg2 {
+  background-image: linear-gradient(#ff9800, rgb(219 212 151 / 41%));
+}
+.bg3 {
+  background-image: linear-gradient(#673ab7, rgb(159 131 207 / 45%));
+}
+
+@tailwind base;
+
+button {
+  @apply focus:outline-none;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .expandedDay-tabs-flexContainer {
+    @apply items-center;
+  }
+  .expandedDay-tabs-root {
+    @apply w-full;
+  }
+  .expandedDay-tabs-scroller {
+    scroll-behavior: smooth;
+    @apply sm:pt-3;
+  }
+  .expandedDay-tabs-scrollButtonsDesktop {
+    @apply sm:flex sm:absolute sm:p-2 sm:z-10 sm:first-of-type:left-3 sm:last-of-type:right-3;
+  }
+
+  .weekday-accordion-root {
+    @apply w-full rounded-lg overflow-hidden;
+  }
+  .weekday-accordion-expanded {
+    @apply rounded-5xl w-full;
+  }
+  .chips-wrapper {
+    width: calc(100% - 90px);
+    @apply h-8 inline-flex flex-wrap flex-row
+      overflow-hidden;
+  }
+
+  .today-list {
+    height: min(230px, 76%);
+    @apply w-full overflow-y-auto;
+  }
+  .today-list:empty,
+  .weekday-list:empty {
+    height: 68%;
+    background-size: 79px;
+    background-image: url("./resources/images/empty.svg");
+    background-position-x: 40px;
+    background-position-y: 20px;
+    @apply bg-no-repeat block mx-0 my-auto;
+  }
+  .today-list:empty::after,
+  .weekday-list:empty::after {
+    content: "No items";
+    font-style: italic;
+    position: absolute;
+    font-size: 24px;
+    text-align: center;
+    top: calc(101px + 11%);
+    left: 33px;
+  }
+  .weekday-list {
+    height: 48%;
+    overflow-y: auto;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  .weekday-list:empty {
+    height: 180px;
+  }
+  .weekday-list:empty::after {
+    top: auto;
+    bottom: 28px;
+    left: 30px;
+  }
+}
