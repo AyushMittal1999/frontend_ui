@@ -1,7 +1,7 @@
 import React, { memo, useContext, useState } from "react";
 import PropTypes from "prop-types";
 import Today from "./components/Today";
-import { WEEKDAYS } from "./constants/Constants";
+import { THEME_KEY, WEEKDAYS } from "./constants/Constants";
 import AppContext from "./context/appContext/Context";
 import SnackBar from "./components/Snackbar";
 import {
@@ -17,7 +17,7 @@ import {
 } from "@material-ui/core";
 
 import TitleIcon from "./custom_icons/TitleIcon";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Save } from "@material-ui/icons";
 import { Suspense } from "react";
 import { Skeleton } from "@material-ui/lab";
@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = memo(function App({ pending, refreshLocal, setIsDark }) {
+  const theme = useTheme();
   const todayDay = WEEKDAYS[(new Date().getDay() - 1 + 7) % 7];
 
   const classes = useStyles();
@@ -121,12 +122,19 @@ const App = memo(function App({ pending, refreshLocal, setIsDark }) {
               className="sm:mr-0"
               control={
                 <Switch
+                  checked={theme.palette.type === "dark"}
                   onChange={(e) => {
-                    setIsDark(e.target.checked);
                     document.documentElement.classList.replace(
                       e.target.checked ? "light" : "dark",
                       e.target.checked ? "dark" : "light"
                     );
+                    try {
+                      localStorage.setItem(
+                        THEME_KEY,
+                        e.target.checked ? "dark" : "light"
+                      );
+                    } catch (e) {}
+                    setIsDark(e.target.checked);
                   }}
                 />
               }

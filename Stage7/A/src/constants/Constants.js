@@ -16,6 +16,7 @@ export const MEALS = ["breakfast", "lunch", "snacks", "dinner"];
 
 export const DATA_KEY = "dietData";
 export const CALORIES_KEY = "caloriesData";
+export const THEME_KEY = "theme";
 
 export const SHOW_SUCCESS = "SHOW_SUCCESS";
 export const SHOW_FAIL = "SHOW_FAIL";

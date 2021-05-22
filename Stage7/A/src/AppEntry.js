@@ -8,10 +8,20 @@ import {
   createMuiTheme,
 } from "@material-ui/core/styles";
 import { useState } from "react";
+import { THEME_KEY } from "./constants/Constants";
 
 export default function AppEntry() {
   const contextData = useContextStateHook();
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    let savedTheme = "light";
+    try {
+      savedTheme = localStorage.getItem(THEME_KEY);
+    } catch (e) {}
+    document.documentElement.classList.add(
+      savedTheme === "dark" ? "dark" : "light"
+    );
+    return savedTheme === "dark";
+  });
   let theme = createMuiTheme({
     palette: {
       type: isDark ? "dark" : "light",
@@ -28,7 +38,6 @@ export default function AppEntry() {
     },
   });
   theme = responsiveFontSizes(theme);
-  document.documentElement.classList.add("light");
   return (
     <ThemeProvider theme={theme}>
       <AppContext.Provider value={contextData}>
