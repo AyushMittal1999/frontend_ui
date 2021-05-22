@@ -20,7 +20,7 @@ const Weekday = memo(function Weekday({ day }) {
     <Paper
       elevation={0}
       id={day}
-      className="bg-transparent mb-5 lg:w-97/100 lg:mx-auto xs:w-full"
+      className="bg-transparent mb-5 lg:w-11/12 lg:mx-auto xs:w-full"
     >
       <Accordion
         TransitionProps={{ unmountOnExit: true }}

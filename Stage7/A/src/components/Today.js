@@ -65,7 +65,7 @@ const Today = memo(function Today({ day }) {
       </Typography>
       <Card
         elevation={3}
-        className="rounded-5xl pb-5 w-11/12 m-auto xs:w-97/100 dark:bg-background-moredark"
+        className="rounded-5xl pb-5 w-11/12 m-auto xs:w-11/12 dark:bg-background-moredark"
       >
         <StyledTabs
           selectionFollowsFocus={true}
