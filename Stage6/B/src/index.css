@@ -34,7 +34,7 @@ button {
     @apply sm:pt-3;
   }
   .expandedDay-tabs-scrollButtonsDesktop {
-    @apply sm:flex sm:absolute p-2 z-10 first-of-type:left-3 last-of-type:right-3;
+    @apply sm:flex sm:absolute sm:p-2 sm:z-10 sm:first-of-type:left-3 sm:last-of-type:right-3;
   }
 
   .weekday-accordion-root {
