@@ -74,8 +74,14 @@ const App = memo(function App({ pending, refreshLocal, setIsDark }) {
         className="bg-brand dark:bg-brand-lightDark text-gray-900 px-1 py-0 justify-center"
       >
         <Toolbar className="p-2">
-          <TitleIcon fontSize="large" className={`${classes.mainIcon} m-1`} />
-          <Typography className="flex-1 p-4 pl-1 font-semibold" variant="h4">
+          <TitleIcon
+            fontSize="large"
+            className={`${classes.mainIcon} m-1 dark:text-white`}
+          />
+          <Typography
+            className="flex-1 p-4 pl-1 font-semibold overflow-ellipsis whitespace-nowrap overflow-hidden dark:text-white"
+            variant="h4"
+          >
             Diet Plan !!
           </Typography>
 
@@ -96,16 +102,23 @@ const App = memo(function App({ pending, refreshLocal, setIsDark }) {
                 color="secondary"
                 variant="contained"
                 size="large"
-                startIcon={<Save />}
               >
-                <Typography className="sm:hidden" variant="button">
-                  {pending === false ? "Nothing to Save" : "Save Changes"}
-                </Typography>
+                <>
+                  <Save fontSize="small" />
+                  {!smallScreen ? (
+                    <Typography variant="button" className="ml-2">
+                      {pending === false ? "Nothing to Save" : "Save Changes"}
+                    </Typography>
+                  ) : (
+                    <></>
+                  )}
+                </>
               </Button>
             </span>
           </Tooltip>
-          <Paper className="ml-2 p-1 pl-3 sm:p-0 sm:pl-2 bg-gray-100 bg-transparent dark:bg-background-dark">
+          <Paper className="ml-2 p-1 pl-3 sm:p-0 sm:pl-1 bg-gray-100 bg-transparent dark:bg-background-dark">
             <FormControlLabel
+              className="sm:mr-0"
               control={
                 <Switch
                   onChange={(e) => {
@@ -117,7 +130,7 @@ const App = memo(function App({ pending, refreshLocal, setIsDark }) {
                   }}
                 />
               }
-              size={smallScreen ? "small" : ""}
+              size={smallScreen ? "small" : "medium"}
               label={smallScreen ? undefined : "DarkMode"}
             />
           </Paper>

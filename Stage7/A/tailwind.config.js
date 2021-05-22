@@ -83,7 +83,7 @@ module.exports = {
 
         brand: {
           dark: "#5a5959",
-          lightDark: "#777777",
+          lightDark: "#444444",
           DEFAULT: "#e9dd71",
           light: " #e7dd87c4",
         },
