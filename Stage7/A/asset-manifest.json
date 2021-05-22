@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/frontend_ui/Stage7/A/static/css/main.2a9ae905.chunk.css",
-    "main.js": "/frontend_ui/Stage7/A/static/js/main.50763eab.chunk.js",
-    "runtime-main.js": "/frontend_ui/Stage7/A/static/js/runtime-main.467ed379.js",
+    "main.css": "/frontend_ui/Stage7/A/static/css/main.00bc716e.chunk.css",
+    "main.js": "/frontend_ui/Stage7/A/static/js/main.c246c78e.chunk.js",
+    "runtime-main.js": "/frontend_ui/Stage7/A/static/js/runtime-main.11f0095c.js",
     "static/js/2.25c1ca9c.chunk.js": "/frontend_ui/Stage7/A/static/js/2.25c1ca9c.chunk.js",
     "static/js/3.1851514b.chunk.js": "/frontend_ui/Stage7/A/static/js/3.1851514b.chunk.js",
-    "static/js/4.19369c32.chunk.js": "/frontend_ui/Stage7/A/static/js/4.19369c32.chunk.js",
+    "static/js/4.5518923d.chunk.js": "/frontend_ui/Stage7/A/static/js/4.5518923d.chunk.js",
     "static/js/5.b3f97310.chunk.js": "/frontend_ui/Stage7/A/static/js/5.b3f97310.chunk.js",
     "static/js/6.2aefd957.chunk.js": "/frontend_ui/Stage7/A/static/js/6.2aefd957.chunk.js",
     "static/js/7.01839fc0.chunk.js": "/frontend_ui/Stage7/A/static/js/7.01839fc0.chunk.js",
@@ -18,9 +18,9 @@
     "static/media/snacks.b9592683.jpg": "/frontend_ui/Stage7/A/static/media/snacks.b9592683.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.467ed379.js",
+    "static/js/runtime-main.11f0095c.js",
     "static/js/2.25c1ca9c.chunk.js",
-    "static/css/main.2a9ae905.chunk.css",
-    "static/js/main.50763eab.chunk.js"
+    "static/css/main.00bc716e.chunk.css",
+    "static/js/main.c246c78e.chunk.js"
   ]
 }
